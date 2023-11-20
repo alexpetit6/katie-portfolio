@@ -6,3 +6,62 @@
 #accordion > :first-child {
   border-top: 5px solid white;
 }
+
+.accordion-tab {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-items: center;
+  height: 20vh;
+  background-color: blue;
+  border: solid white;
+  border-width: 0 5px 5px 5px;
+  font-size: calc(0.5em + 2vw);
+  font-family: 'Tenor Sans', sans-serif;
+  text-align: center;
+}
+
+.accordion-tab > h1 {
+  margin: 0 20px;
+}
+
+#about-tab {
+  background-color: #7E6FFF;
+}
+
+#choreographer-tab {
+  background-color: #FF6FBD;
+}
+
+#performance-tab {
+  background-color: #6FC3FF;
+}
+
+#resume-tab {
+  background-color: #FFF16F;
+}
+
+#contact-tab {
+  background-color: #CD6FFF;
+}
+
+#about-tab > h1 {
+  grid-column-start: 1;
+}
+
+#choreographer-tab > h1 {
+  grid-column-start: 2;
+}
+
+#performance-tab > h1 {
+  grid-column-start: 3;
+}
+
+#resume-tab > h1 {
+  grid-column-start: 4;
+}
+
+#contact-tab > h1 {
+  grid-column-start: 5;
+}
+
