@@ -1,0 +1,6 @@
+.accordion-tab {
+  height: 20vh;
+  background-color: blue;
+  border: solid white;
+  border-width: 0 5px 5px 5px;
+}

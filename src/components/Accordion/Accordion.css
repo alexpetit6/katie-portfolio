@@ -1,0 +1,8 @@
+#accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+#accordion > :first-child {
+  border-top: 5px solid white;
+}

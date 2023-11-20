@@ -1,0 +1,33 @@
+#contact-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(59, 59, 59);
+  height: 40px;
+  border-bottom: 3px solid white;
+}
+
+#contact-bar > a {
+  display: flex;
+  align-items: center;
+}
+
+#contact-bar > a > img:not(#email-icon):hover {
+  height: 30px;
+}
+
+#contact-bar > a > img:not(#email-icon) {
+  height: 20px;
+  margin-inline: 10px;
+  transition: all 400ms;
+}
+
+#email-icon {
+  height: 30px;
+  margin: 4px;
+  transition: all 400ms;
+}
+
+#email-icon:hover {
+  height: 40px;
+}
