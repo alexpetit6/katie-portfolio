@@ -21,11 +21,19 @@
 
 #landing-subtitle {
   margin: 10px;
-  font-size: calc(0.5em + 2vw);
+  font-size: calc(1em + 2vw);
   color: white;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1024px) {
+  #landing-bg {
+    height: 75vh;
+  }
+
+  #landing-title {
+    margin: 30% 0 0 0;
+  }
+
   #landing-bg > .line {
     width: 95vw;
   }

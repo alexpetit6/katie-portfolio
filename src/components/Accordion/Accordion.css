@@ -30,16 +30,12 @@
 
 .accordion-tab:hover {
   position: relative;
-  border-top: 5px solid white;
+  /* border-top: 5px solid white; */
   margin: -2vh 0;
   height: 24vh;
   width: 102vw;
-  right: 1vw;
   box-shadow: 0 8px 4px black;
-}
-
-.accordion-tab:hover > h1 {
-  transition: all 1s;
+  font-size: calc(0.7em + 2vw);
 }
 
 .accordion-tab > h1 {
