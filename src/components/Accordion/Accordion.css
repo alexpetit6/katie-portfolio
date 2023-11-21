@@ -1,6 +1,7 @@
 #accordion {
   display: flex;
   flex-direction: column;
+  background-image: url('https://i.imgur.com/Rls5q4N.jpg');
 }
 
 #accordion > :first-child {
@@ -13,12 +14,32 @@
   align-items: center;
   justify-items: center;
   height: 20vh;
-  background-color: blue;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
   border: solid white;
-  border-width: 0 5px 5px 5px;
+  border-width: 2.5px 5px 2.5px 5px;
+  color: white;
+  text-shadow: 3px 3px 2px black;
   font-size: calc(0.5em + 2vw);
   font-family: 'Tenor Sans', sans-serif;
   text-align: center;
+  transition: all 1s;
+}
+
+.accordion-tab:hover {
+  position: relative;
+  border-top: 5px solid white;
+  margin: -2vh 0;
+  height: 24vh;
+  width: 102vw;
+  right: 1vw;
+  box-shadow: 0 8px 4px black;
+}
+
+.accordion-tab:hover > h1 {
+  transition: all 1s;
 }
 
 .accordion-tab > h1 {
@@ -26,23 +47,23 @@
 }
 
 #about-tab {
-  background-color: #7E6FFF;
+  background-color: #7d6fffA8;
 }
 
 #choreographer-tab {
-  background-color: #FF6FBD;
+  background-color: #ff6fbcA8;
 }
 
 #performance-tab {
-  background-color: #6FC3FF;
+  background-color: #6FC3FFA8;
 }
 
 #resume-tab {
-  background-color: #FFF16F;
+  background-color: #FFF16FA8;
 }
 
 #contact-tab {
-  background-color: #CD6FFF;
+  background-color: #CD6FFFA8;
 }
 
 #about-tab > h1 {
