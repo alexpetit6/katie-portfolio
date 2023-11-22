@@ -6,11 +6,14 @@ export default function Resume() {
     <div id='resume'>
       <h1>Resumes</h1>
       <Line />
-      <div id='resume-container'>
+      <div id='resume-frame'>
         <div className="corner-border" id='corner-border-1'></div>
         <div className="corner-border" id='corner-border-2'></div>
         <div className="corner-border" id='corner-border-3'></div>
         <div className="corner-border" id='corner-border-4'></div>
+        <div id='resume-container'>
+
+        </div>
       </div>
     </div>
   )
