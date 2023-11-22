@@ -36,6 +36,7 @@
   width: 102vw;
   box-shadow: 0 8px 4px black;
   font-size: calc(0.7em + 2vw);
+  cursor: pointer;
 }
 
 .accordion-tab > h1 {
