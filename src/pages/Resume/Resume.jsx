@@ -15,7 +15,7 @@ export default function Resume() {
           <div>
             <h3>Choreography</h3>
             <i className="fa-regular fa-file-pdf" style={{color: '#ffffff'}}></i>
-            <a href="https://sei-chum-bucket.s3.us-west-2.amazonaws.com/choreography-resume.pdf">
+            <a href="https://sei-chum-bucket.s3.us-west-2.amazonaws.com/choreography-resume.pdf" target='_blank' rel="noreferrer">
               <button className='view-pdf'>View & Download</button>
             </a>
           </div>

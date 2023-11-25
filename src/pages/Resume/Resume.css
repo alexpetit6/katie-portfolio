@@ -2,14 +2,15 @@
   display: flex;
   height: 100vh;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: red;
 }
 
 #resume > h1 {
   margin: 20px;
-  font-size: calc(1em + 3vw);
+  font-size: calc(1em + 4vw);
+  font-family: 'Alfa Slab One', serif;
+
 }
 
 #resume > .line {

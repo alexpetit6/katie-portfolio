@@ -20,11 +20,6 @@
   width: 100vw;
   border: solid white;
   border-width: 2.5px 5px 2.5px 5px;
-  color: white;
-  text-shadow: 3px 3px 2px black;
-  font-size: calc(0.5em + 2vw);
-  font-family: 'Tenor Sans', sans-serif;
-  text-align: center;
   transition: all 1s;
 }
 
@@ -35,12 +30,17 @@
   height: 24vh;
   width: 102vw;
   box-shadow: 0 8px 4px black;
-  font-size: calc(0.7em + 2vw);
+  font-size: calc(0.1em + 2vw);
   cursor: pointer;
 }
 
 .accordion-tab > h1 {
-  margin: 0 20px;
+  color: white;
+  text-shadow: 3px 3px 2px black;
+  font-size: calc(1.5em + 3vw);
+  font-family: 'Tenor Sans', sans-serif;
+  text-align: center;
+  padding: 20px;
 }
 
 #about-tab {
