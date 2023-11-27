@@ -23,15 +23,23 @@ export default function Accordion() {
     perf: perfRef,
     resume: resumeRef,
     contact: contactRef
-  }
+  };
 
   function handleExpand(page) {
     setClosed({
       ...closed,
       [page]: false
-    })
+    });
 
-    // refs[page].current.style.height = 'auto';
+    function scroll() {
+      const portPos = refs[page].current.getBoundingClientRect().y;
+      window.scrollBy({
+        top: portPos,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+    setTimeout(scroll, 1);
   }
 
   return (

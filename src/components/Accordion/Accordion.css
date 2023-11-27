@@ -32,14 +32,19 @@
 .closed-tab:hover > .tab-title {
   height: 24vh;
   font-size: calc(1.5em + 4vw);
+  transition: all 1s
 }
 
 .open-tab {
-  height: 120vh;
-  transition: all 1s;
+  height: 100vh;
+}
+
+.open-tab > .tab-title {
+  height: 0;
 }
 
 .tab-title {
+  overflow: hidden;
   height: 20vh;
   width: 100%;
   display: grid;
