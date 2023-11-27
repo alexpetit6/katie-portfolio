@@ -9,10 +9,7 @@
 }
 
 .accordion-tab {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  justify-items: center;
+  overflow: hidden;
   height: 20vh;
   right: 0;
   left: 0;
@@ -34,13 +31,24 @@
   cursor: pointer;
 }
 
-.accordion-tab > h1 {
+.accordion-tab:hover > .tab-title {
+  height: 24vh;
+}
+
+.tab-title {
+  height: 20vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-items: center;
   color: white;
   text-shadow: 3px 3px 2px black;
   font-size: calc(1.5em + 3vw);
   font-family: 'Tenor Sans', sans-serif;
   text-align: center;
-  padding: 20px;
+  transition: all 1s;
+  /* margin: 20px; */
 }
 
 #about-tab {
@@ -61,25 +69,29 @@
 
 #contact-tab {
   background-color: #CD6FFFA8;
+  border-bottom-width: 5px;
 }
 
-#about-tab > h1 {
+#about-tab > .tab-title > h1 {
   grid-column-start: 1;
 }
 
-#choreographer-tab > h1 {
+#choreographer-tab > .tab-title > h1 {
   grid-column-start: 2;
 }
 
-#performance-tab > h1 {
+#performance-tab > .tab-title > h1 {
   grid-column-start: 3;
 }
 
-#resume-tab > h1 {
+#resume-tab > .tab-title > h1 {
   grid-column-start: 4;
 }
 
-#contact-tab > h1 {
+#contact-tab > .tab-title > h1 {
   grid-column-start: 5;
 }
 
+/* .tab-page {
+  margin: 20vh;
+} */

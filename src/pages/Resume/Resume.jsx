@@ -3,7 +3,7 @@ import Line from '../../components/Line/Line';
 
 export default function Resume() {
   return (
-    <div id='resume'>
+    <div className='tab-page' id='resume'>
       <h1>Resumes</h1>
       <Line />
       <div id='resume-frame'>

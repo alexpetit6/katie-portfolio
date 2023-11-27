@@ -10,7 +10,6 @@
   margin: 20px;
   font-size: calc(1em + 4vw);
   font-family: 'Alfa Slab One', serif;
-
 }
 
 #resume > .line {
@@ -92,6 +91,7 @@
 #resume-container > div > h3 {
   margin: 20px;
   font-size: calc(1.5em + 2vw);
+  font-family: 'Tenor Sans', sans-serif;
   color: white;
 }
 
