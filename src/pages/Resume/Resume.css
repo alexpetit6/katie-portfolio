@@ -6,12 +6,6 @@
   background-color: red;
 }
 
-#resume > h1 {
-  margin: 20px;
-  font-size: calc(1em + 4vw);
-  font-family: 'Alfa Slab One', serif;
-}
-
 #resume > .line {
   width: 80vw;
   margin: 0 0 20px;

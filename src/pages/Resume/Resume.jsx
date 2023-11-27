@@ -1,11 +1,11 @@
 import './Resume.css';
 import Line from '../../components/Line/Line';
+import Header from '../../components/Header/Header';
 
 export default function Resume() {
   return (
     <div className='tab-page' id='resume'>
-      <h1>Resumes</h1>
-      <Line />
+      <Header title='Resumes' />
       <div id='resume-frame'>
         <div className="corner-border" id='corner-border-1'></div>
         <div className="corner-border" id='corner-border-2'></div>
