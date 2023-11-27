@@ -8,7 +8,7 @@
   border-top: 5px solid white;
 }
 
-.accordion-tab {
+.closed-tab {
   overflow: hidden;
   height: 20vh;
   right: 0;
@@ -17,22 +17,26 @@
   width: 100vw;
   border: solid white;
   border-width: 2.5px 5px 2.5px 5px;
-  transition: all 1s;
+  transition: all 1s ease;
 }
 
-.accordion-tab:hover {
+.closed-tab:hover {
   position: relative;
-  /* border-top: 5px solid white; */
   margin: -2vh 0;
   height: 24vh;
   width: 102vw;
   box-shadow: 0 8px 4px black;
-  font-size: calc(0.1em + 2vw);
   cursor: pointer;
 }
 
-.accordion-tab:hover > .tab-title {
+.closed-tab:hover > .tab-title {
   height: 24vh;
+  font-size: calc(1.5em + 4vw);
+}
+
+.open-tab {
+  height: 120vh;
+  transition: all 1s;
 }
 
 .tab-title {
@@ -48,7 +52,6 @@
   font-family: 'Tenor Sans', sans-serif;
   text-align: center;
   transition: all 1s;
-  /* margin: 20px; */
 }
 
 #about-tab {
@@ -92,6 +95,3 @@
   grid-column-start: 5;
 }
 
-/* .tab-page {
-  margin: 20vh;
-} */
