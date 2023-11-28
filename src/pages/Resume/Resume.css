@@ -77,13 +77,13 @@
 #resume-container > div {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 100%;
 }
 
 #resume-container > div > h3 {
-  margin: 20px;
+  margin-block: 20px;
   font-size: calc(1.5em + 2vw);
   font-family: 'Tenor Sans', sans-serif;
   color: white;
@@ -94,7 +94,7 @@
 }
 
 .view-pdf {
-  margin: 20px;
+  margin-block: 20px;
   height: 6vw;
   width: 15vw;
   color: white;
