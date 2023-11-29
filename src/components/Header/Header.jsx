@@ -1,12 +1,24 @@
 import './Header.css';
 import Line from '../Line/Line';
 
-export default function Header({title, page, setter, closed}) {
+export default function Header({title, page, currentRef, setter, closed}) {
   function handleCollapse() {
     setter({
       ...closed,
-      [page]: true,
+      [page]: 'closing-tab',
     });
+
+    currentRef.style.height = '20vh';
+
+
+
+    setTimeout(() => {
+      setter({
+        ...closed,
+        [page]: 'closed-tab',
+      });
+      currentRef.style.height = ''
+    }, 1200);
   }
 
   return (

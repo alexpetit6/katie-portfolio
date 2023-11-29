@@ -2,10 +2,10 @@ import './Resume.css';
 import Line from '../../components/Line/Line';
 import Header from '../../components/Header/Header';
 
-export default function Resume({setter, closed}) {
+export default function Resume({setter, closed, currentRef}) {
   return (
     <div className='tab-page' id='resume'>
-      <Header title='Resumes' page='resume' setter={setter} closed={closed} />
+      <Header title='Resumes' page='resume' setter={setter} closed={closed} currentRef={currentRef} />
       <div id='resume-frame'>
         <div className="corner-border" id='corner-border-1'></div>
         <div className="corner-border" id='corner-border-2'></div>

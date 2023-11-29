@@ -26,4 +26,5 @@
   position: relative;
   cursor: pointer;
   top: 10px;
+  text-shadow: -3px -3px 2px black;
 }

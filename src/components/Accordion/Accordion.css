@@ -10,10 +10,7 @@
 
 .closed-tab {
   overflow: hidden;
-  height: 20vh;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  max-height: 20vh;
   width: 100vw;
   border: solid white;
   border-width: 2.5px 5px 2.5px 5px;
@@ -23,7 +20,7 @@
 .closed-tab:hover {
   position: relative;
   margin: -2vh 0;
-  height: 24vh;
+  max-height: 24vh;
   width: 102vw;
   box-shadow: 0 8px 4px black;
   cursor: pointer;
@@ -36,11 +33,25 @@
 }
 
 .open-tab {
-  height: 100vh;
+  overflow: hidden;
+  transition: height 1s;
 }
 
 .open-tab > .tab-title {
   height: 0;
+}
+
+.closing-tab {
+  overflow: hidden;
+  height: 20vh;
+  width: 100vw;
+  border: solid white;
+  border-width: 2.5px 5px 2.5px 5px;
+  transition: height 1s ease;
+}
+
+.closing-tab > .tab-title {
+  height: 20vh;
 }
 
 .tab-title {

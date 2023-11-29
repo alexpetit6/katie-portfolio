@@ -4,11 +4,11 @@ import { useRef, useState } from 'react';
 
 export default function Accordion() {
   const [closed, setClosed] = useState({
-    about: true,
-    choreo: true,
-    perf: true,
-    resume: true,
-    contact: true,
+    about: 'closed-tab',
+    choreo: 'closed-tab',
+    perf: 'closed-tab',
+    resume: 'closed-tab',
+    contact: 'closed-tab',
   });
 
   const aboutRef = useRef(null);
@@ -26,11 +26,16 @@ export default function Accordion() {
   };
 
   function handleExpand(page) {
+    const current = refs[page].current;
+
     setClosed({
       ...closed,
-      [page]: false
+      [page]: 'open-tab'
     });
 
+    current.style.height = `${current.scrollHeight}px`;
+
+    
     function scroll() {
       const portPos = refs[page].current.getBoundingClientRect().y;
       window.scrollBy({
@@ -41,23 +46,36 @@ export default function Accordion() {
     }
     setTimeout(scroll, 1);
   }
+  function handleCollapse(page) {
+    setClosed({
+      ...closed,
+      [page]: 'closing-tab',
+    });
 
+    // setTimeout(() => {
+    //   setter({
+    //     ...closed,
+    //     [page]: 'closed-tab',
+    //   });
+    // }, 1100);
+  }
+  
   return (
     <div id='accordion'>
-      <div ref={aboutRef}  className={closed.about ? 'closed-tab' : 'open-tab'} id='about-tab'>
+      <div ref={aboutRef}  className={closed.about} id='about-tab'>
         <div onClick={() => handleExpand('about')} className="tab-title"><h1>About</h1></div>
       </div>
-      <div ref={choreoRef} className={closed.choreo ? 'closed-tab' : 'open-tab'} id='choreographer-tab'>
+      <div ref={choreoRef} className={closed.choreo} id='choreographer-tab'>
         <div onClick={() => handleExpand('choreo')} className="tab-title"><h1>Choreography</h1></div>
       </div>
-      <div ref={perfRef} className={closed.perf ? 'closed-tab' : 'open-tab'} id='performance-tab'>
+      <div ref={perfRef} className={closed.perf} id='performance-tab'>
         <div onClick={() => handleExpand('perf')} className="tab-title"><h1>Performance</h1></div>
       </div>
-      <div ref={resumeRef} className={closed.resume ? 'closed-tab' : 'open-tab'} id='resume-tab'>
+      <div ref={resumeRef} className={closed.resume} id='resume-tab'>
         <div onClick={() => handleExpand('resume')} className="tab-title"><h1>Resumes</h1></div>
-        <Resume setter={setClosed} closed={closed} />
+        <Resume currentRef={refs.resume.current} setter={setClosed} closed={closed} />
       </div>
-      <div ref={contactRef} className={closed.contact ? 'closed-tab' : 'open-tab'} id='contact-tab'>
+      <div ref={contactRef} className={closed.contact} id='contact-tab'>
         <div onClick={() => handleExpand('contact')} className="tab-title"><h1>Contact</h1></div>
       </div>
     </div>
