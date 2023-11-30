@@ -15,6 +15,7 @@
 
 #about-container > h1 {
   position: relative;
+  height: 20vh;
   left: 4vw;
   top: 5vh;
   font-size: calc(1em + 5vw);
