@@ -14,14 +14,14 @@ export default function Resume({setter, closed, currentRef}) {
         <div id='resume-container'>
           <div>
             <h3>Choreography</h3>
-            <i className="fa-regular fa-file-pdf" style={{color: '#ffffff'}}></i>
+            <i className="fa-regular fa-file-pdf" ></i>
             <a href="https://sei-chum-bucket.s3.us-west-2.amazonaws.com/choreography-resume.pdf" target='_blank' rel="noreferrer">
               <button className='view-pdf'>View & Download</button>
             </a>
           </div>
           <div>
             <h3>Performance</h3>
-            <i className="fa-regular fa-file-pdf" style={{color: '#ffffff'}}></i>
+            <i className="fa-regular fa-file-pdf" ></i>
             <a href="https://sei-chum-bucket.s3.us-west-2.amazonaws.com/performance-resume.pdf" target='_blank' rel="noreferrer">
               <button className='view-pdf'>View & Download</button>
             </a>

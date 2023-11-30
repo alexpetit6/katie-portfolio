@@ -25,7 +25,7 @@ export default function Header({title, page, currentRef, setter, closed}) {
     <>
     <div className="page-header">
       <h1>{title}</h1>
-      <i className="fa-solid fa-chevron-up" style={{color: "#ffffff",}} onClick={handleCollapse}></i>
+      <i className="fa-solid fa-chevron-up" onClick={handleCollapse}></i>
     </div>
     <Line />
     </>

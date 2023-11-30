@@ -1,5 +1,6 @@
 import './Accordion.css';
 import Resume from '../../pages/Resume/Resume';
+import About from '../../pages/About/About';
 import { useRef, useState } from 'react';
 
 export default function Accordion() {
@@ -33,9 +34,8 @@ export default function Accordion() {
       [page]: 'open-tab'
     });
 
-    current.style.height = `${current.scrollHeight}px`;
+    current.style.height = `calc(${current.scrollHeight}px - 20vh`;
 
-    
     function scroll() {
       const portPos = refs[page].current.getBoundingClientRect().y;
       window.scrollBy({
@@ -44,20 +44,8 @@ export default function Accordion() {
         behavior: 'smooth'
       });
     }
+    
     setTimeout(scroll, 1);
-  }
-  function handleCollapse(page) {
-    setClosed({
-      ...closed,
-      [page]: 'closing-tab',
-    });
-
-    // setTimeout(() => {
-    //   setter({
-    //     ...closed,
-    //     [page]: 'closed-tab',
-    //   });
-    // }, 1100);
   }
   
   return (

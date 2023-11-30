@@ -1,0 +1,57 @@
+#about {
+  height: 100vh;
+  width: 100vw;
+  background-color: #F6A379;
+}
+
+#about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  background-image: url('../../../public/images/katie-about.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#about-container > h1 {
+  position: relative;
+  left: 4vw;
+  top: 5vh;
+  font-size: calc(1em + 5vw);
+  font-family: 'Alfa Slab One', serif;
+  color: white;
+}
+
+#about-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100vh;
+  width: 100%;
+}
+
+#about-right > i {
+  position: relative;
+  right: 30px;
+  top: 0;
+  justify-self: end;
+  align-self: center;
+  font-size: calc(1em + 4vw);
+  transition: all 1s;
+
+}
+
+#about-right > i:hover {
+  position: relative;
+  cursor: pointer;
+  top: 10px;
+  text-shadow: 0 -6px 5px black;
+}
+
+#about-right > p {
+  position: relative;
+  justify-self: center;
+  left: 5vw;
+  width: 25vw;
+  font-size: calc(1em + 0.3vw);
+  font-family: 'Solway', serif;
+}
