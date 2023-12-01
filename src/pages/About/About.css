@@ -7,6 +7,7 @@
 #about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
   height: 100vh;
   background-image: url('../../../public/images/katie-about.jpeg');
   background-size: contain;
@@ -15,7 +16,8 @@
 
 #about-container > h1 {
   position: relative;
-  height: 20vh;
+  height: 10vh;
+  width: 20px;
   left: 4vw;
   top: 5vh;
   font-size: calc(1em + 5vw);
@@ -23,14 +25,14 @@
   color: white;
 }
 
-#about-right {
+/* #about-right {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   height: 100vh;
   width: 100%;
-}
+} */
 
-#about-right > i {
+#about-container > i {
   position: relative;
   right: 30px;
   top: 0;
@@ -41,18 +43,47 @@
 
 }
 
-#about-right > i:hover {
+#about-container > i:hover {
   position: relative;
   cursor: pointer;
   top: 10px;
   text-shadow: 0 -6px 5px black;
 }
 
-#about-right > p {
+#about-container > p {
+  grid-column: 2;
   position: relative;
   justify-self: center;
+  align-self: center;
   left: 5vw;
   width: 25vw;
   font-size: calc(1em + 0.3vw);
   font-family: 'Solway', serif;
+}
+
+@media (max-width: 1024px) {
+  #about {
+    background-color: #E5A991;
+  }
+
+  #about-container {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 20fr;
+    background-position: bottom;
+    background-size: 120%;
+  }
+
+  #about-container {
+    /* height: 50vh; */
+  }
+
+  #about-container > p {
+    position: relative;
+    top: 5vh;
+    grid-column: span 2;
+    justify-self: start;
+    align-self: start;
+    width: 90vw;
+    font-size: 2vmax;
+  }
 }

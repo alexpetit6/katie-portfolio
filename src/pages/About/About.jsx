@@ -16,14 +16,14 @@ export default function About({setter, closed, page, currentRef}) {
         [page]: 'closed-tab',
       });
       currentRef.style.height = ''
-    }, 1200);
+    }, 1500);
   }
 
   return (
     <div id="about">
       <div id="about-container">
         <h1>About</h1>
-        <div id="about-right">
+        {/* <div id="about-right"> */}
           <i className="fa-solid fa-chevron-up" onClick={handleCollapse}></i>
           <p>
             Katie, an ardent enthusiast of musical theater, breathes life into the stage with an unwavering passion for the performing arts. 
@@ -32,7 +32,7 @@ export default function About({setter, closed, page, currentRef}) {
             captivating visual symphonies. Her proficiency in choreographing intricate routines is a testament to her dedication and creative flair, 
             turning each performance into a dynamic and memorable spectacle. 
           </p>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   )
