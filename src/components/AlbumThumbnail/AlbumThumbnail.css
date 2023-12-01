@@ -1,0 +1,22 @@
+.album-thumbnail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30vw;
+  height: 50vh;
+}
+
+.album-thumbnail > h1 {
+  font-size: calc(1em + 1.2vw);
+  font-family: 'Tenor Sans', sans-serif;
+}
+
+.album-thumbnail > img {
+  height: 20vw;
+  width: 30vw;
+}
+
+.album-thumbnail > .line {
+  width: 33vw;
+}
