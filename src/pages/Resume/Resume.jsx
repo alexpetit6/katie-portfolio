@@ -6,6 +6,7 @@ export default function Resume({setter, closed, currentRef}) {
   return (
     <div className='tab-page' id='resume'>
       <Header title='Resumes' page='resume' setter={setter} closed={closed} currentRef={currentRef} />
+      <Line />
       <div id='resume-frame'>
         <div className="corner-border" id='corner-border-1'></div>
         <div className="corner-border" id='corner-border-2'></div>

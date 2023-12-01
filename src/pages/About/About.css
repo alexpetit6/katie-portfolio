@@ -73,10 +73,6 @@
     background-size: 120%;
   }
 
-  #about-container {
-    /* height: 50vh; */
-  }
-
   #about-container > p {
     position: relative;
     top: 5vh;

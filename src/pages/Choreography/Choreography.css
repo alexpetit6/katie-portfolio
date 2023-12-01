@@ -1,0 +1,16 @@
+#choreography {
+  background-color: grey;
+  min-height: 100vh;
+}
+
+.double-line {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 100vw;
+
+}
+
+.double-line > .line {
+  width: 40vw;
+}

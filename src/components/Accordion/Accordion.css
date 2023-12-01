@@ -10,7 +10,7 @@
 
 .closed-tab {
   overflow: hidden;
-  max-height: 20vh;
+  height: 20vh;
   width: 100vw;
   border: solid white;
   border-width: 2.5px 5px 2.5px 5px;
@@ -20,7 +20,7 @@
 .closed-tab:hover {
   position: relative;
   margin: -2vh 0;
-  max-height: 24vh;
+  height: 24vh;
   width: 102vw;
   box-shadow: 0 8px 4px black;
   cursor: pointer;
