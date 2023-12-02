@@ -4,7 +4,7 @@
   justify-content: space-around;
   align-items: center;
   width: 30vw;
-  height: 50vh;
+  height: 45vh;
 }
 
 .album-thumbnail > h1 {
@@ -19,7 +19,7 @@
 }
 
 .album-thumbnail-img > img {
-  height: 100%;
+  width: 100%;
 }
 
 .album-thumbnail > .line {
@@ -38,8 +38,8 @@
   }
   
   .album-thumbnail-img {
-    height: 53.33vw;
-    width: 80vw;
+    height: 46.66vw;
+    width: 70vw;
   }
   
   .album-thumbnail > .line {
@@ -52,4 +52,10 @@
     height: 80vw;
     width: 80vw;
   }
+  
+  .album-thumbnail-img > img {
+    height: 100%;
+    width: auto;
+  }
+
 }

@@ -34,7 +34,7 @@
 
 .open-tab {
   overflow: hidden;
-  transition: height 1s;
+  /* transition: height 1s; */
 }
 
 .open-tab > .tab-title {

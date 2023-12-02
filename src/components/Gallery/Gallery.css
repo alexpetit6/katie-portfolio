@@ -1,0 +1,11 @@
+.albums {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+@media (max-width: 1024px) {
+  .albums {
+    grid-template-columns: 1fr;
+  }
+}

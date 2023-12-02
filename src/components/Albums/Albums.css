@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  background-color: red;
 }
 
 @media (max-width: 1024px) {

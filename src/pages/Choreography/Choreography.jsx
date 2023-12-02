@@ -3,10 +3,10 @@ import Albums from "../../components/Albums/Albums";
 import Header from "../../components/Header/Header";
 import Line from '../../components/Line/Line';
 
-export default function Choreography() {
+export default function Choreography({currentRef, setter, closed}) {
   return (
     <div id="choreography">
-      <Header title='Choreography' />
+      <Header title='Choreography' currentRef={currentRef} setter={setter} closed={closed} page='choreo' />
       <div className="double-line"><Line /><Line /></div>
       <Albums />
     </div>

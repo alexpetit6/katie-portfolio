@@ -11,7 +11,7 @@ export default function Main () {
     <ContactBar />
     <Landing />
     <Accordion />
-    <Choreography />
+    {/* <Choreography /> */}
     </>
   )
 

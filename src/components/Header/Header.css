@@ -1,11 +1,11 @@
 .page-header {
   width: 100vw;
-  height: 10vh;
+  height: 15vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   font-size: calc(1em + 4vw);
   font-family: 'Alfa Slab One', serif;
   color: black;
