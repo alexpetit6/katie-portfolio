@@ -5,7 +5,9 @@ export default function AlbumThumbnail() {
   return (
     <div className='album-thumbnail'>
       <h1>Book of Mormon</h1>
-      <img src="https://i.imgur.com/Rls5q4N.jpg" alt="" />
+      <div className='album-thumbnail-img'>
+        <img src="https://i.imgur.com/Rls5q4N.jpg" alt="" />
+      </div>
       <Line />
     </div>
   )

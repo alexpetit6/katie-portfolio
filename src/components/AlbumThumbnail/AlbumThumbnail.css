@@ -12,11 +12,44 @@
   font-family: 'Tenor Sans', sans-serif;
 }
 
-.album-thumbnail > img {
+.album-thumbnail-img {
+  overflow: hidden;
   height: 20vw;
   width: 30vw;
 }
 
+.album-thumbnail-img > img {
+  height: 100%;
+}
+
 .album-thumbnail > .line {
   width: 33vw;
+}
+
+
+@media (max-width: 1024px) {
+  .album-thumbnail {
+    width: 80vw;
+  }
+  
+  .album-thumbnail > h1 {
+    font-size: calc(1em + 3vw);
+    font-family: 'Tenor Sans', sans-serif;
+  }
+  
+  .album-thumbnail-img {
+    height: 53.33vw;
+    width: 80vw;
+  }
+  
+  .album-thumbnail > .line {
+    width: 88vw;
+  }
+  
+}
+@media (max-width: 576px) {
+  .album-thumbnail-img {
+    height: 80vw;
+    width: 80vw;
+  }
 }

@@ -4,3 +4,9 @@
   justify-items: center;
   background-color: red;
 }
+
+@media (max-width: 1024px) {
+  .albums {
+    grid-template-columns: 1fr;
+  }
+}
