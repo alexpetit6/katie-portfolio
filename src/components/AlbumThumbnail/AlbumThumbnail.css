@@ -1,7 +1,7 @@
 .album-thumbnail {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 30vw;
   height: 45vh;

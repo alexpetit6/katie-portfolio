@@ -1,11 +1,26 @@
-.albums {
+.gallery {
+  background-color: red;
+}
+
+.triple-line {
+  width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
 }
 
-@media (max-width: 1024px) {
-  .albums {
+.triple-line > .line {
+  width: 30vw;
+}
+
+.fancybox-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+/* @media (max-width: 1024px) {
+  .gallery {
     grid-template-columns: 1fr;
   }
-}
+} */
