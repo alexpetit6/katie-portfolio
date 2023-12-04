@@ -1,7 +1,7 @@
 .photo-thumbnail {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 30vw;
   height: 45vh;
@@ -25,28 +25,22 @@
 
 @media (max-width: 1024px) {
   .photo-thumbnail {
-    width: 80vw;
+    height: 30vh;
   }
-  
-  .photo-thumbnail-img {
-    height: 46.66vw;
-    width: 70vw;
-  }
-  
-  .photo-thumbnail > .line {
-    width: 88vw;
-  }
-  
 }
+
 @media (max-width: 576px) {
   .photo-thumbnail-img {
-    height: 80vw;
-    width: 80vw;
+    height: 40vw;
+    width: 40vw;
+  }
+
+  .photo-thumbnail > .line {
+    width: 43vw;
   }
   
   .photo-thumbnail-img > img {
     height: 100%;
     width: auto;
   }
-
 }

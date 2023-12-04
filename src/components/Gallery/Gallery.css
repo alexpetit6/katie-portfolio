@@ -19,8 +19,16 @@
   justify-items: center;
 }
 
-/* @media (max-width: 1024px) {
-  .gallery {
-    grid-template-columns: 1fr;
+@media (max-width: 576px) {
+  .triple-line {
+    grid-template-columns: 1fr 1fr;
   }
-} */
+
+  .triple-line > :last-child {
+    visibility: hidden;
+  }
+
+  .fancybox-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -16,6 +16,9 @@ export default function Gallery({title}) {
         <Photo />
         <Photo />
         <Photo />
+        <Photo />
+        <Photo />
+        <Photo />
       </Fancybox>
 
     </div>
