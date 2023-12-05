@@ -11,7 +11,12 @@ const albumSchema = new Schema({
     required: true,
   },
   photos: {
-    type: Array
+    type: Array,
+    default: [],
+  },
+  category: {
+    type: String,
+    required: true
   }
 })
 
