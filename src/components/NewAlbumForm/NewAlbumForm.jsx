@@ -1,7 +1,7 @@
 import './NewAlbumForm.css';
 import { useState, useRef } from 'react';
 
-export default function NewAlbumForm({category, hidden}) {
+export default function NewAlbumForm({category, hidden, setOpen}) {
   // const { albumId } = useParams();
 
   const baseData = {
@@ -14,6 +14,11 @@ export default function NewAlbumForm({category, hidden}) {
   const thumbnailRef = useRef(null);
   const photosRef = useRef(null);
 
+  function handleClose() {
+    setOpen(false);
+    document.body.style.overflow = 'auto';
+  }
+
   function handleChange(evt) {
     setFormData({
       ...formData,
@@ -23,6 +28,7 @@ export default function NewAlbumForm({category, hidden}) {
 
   return (
     <div id='new-album' style={{visibility: hidden ? 'hidden' : 'visible'}}>
+      <button onClick={handleClose} id='close-album-form-btn'>X</button>
       <div id='new-album-container'>
         <form id='album-form'>
           <input id='title-input' name='title' type="text" placeholder='Enter Title' onChange={handleChange}/>

@@ -6,7 +6,10 @@ export default function OpenAlbumForm({user}) {
   const [open, setOpen] = useState(false);
 
   function handleClick() {
-    setOpen(true);
+    if (user) {
+      document.body.style.overflow = 'hidden';
+      setOpen(true);
+    }
   }
 
   return (
