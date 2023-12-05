@@ -53,3 +53,39 @@
   height: 50%;
   font-size: 1.2em;
 }
+
+@media (max-width: 576px) {
+  #new-album-container {
+    width: 80vw;
+    height: 80vh;
+  }
+  
+  #album-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+  }
+  
+  #title-input {
+    width: 100%;
+    font-size: 2em;
+  }
+
+  #album-form > label {
+    font-size: 1em;
+  }
+
+  #album-form > input:not(#title-input) {
+    width: 90%;
+  }
+
+  #album-submit-button {
+    font-size: 1.5em;
+    height: 10%;
+    width: 70%;
+  }
+}
