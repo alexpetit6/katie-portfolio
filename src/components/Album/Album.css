@@ -1,4 +1,6 @@
-
+.album {
+  min-height: 100vh;
+}
 
 .album-thumbnails-container {
   display: grid;

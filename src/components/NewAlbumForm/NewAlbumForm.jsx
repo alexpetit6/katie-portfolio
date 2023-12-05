@@ -1,7 +1,7 @@
 import './NewAlbumForm.css';
 import { useState, useRef } from 'react';
 
-export default function NewAlbumForm({category}) {
+export default function NewAlbumForm({category, hidden}) {
   // const { albumId } = useParams();
 
   const baseData = {
@@ -22,7 +22,7 @@ export default function NewAlbumForm({category}) {
   }
 
   return (
-    <div id='new-album'>
+    <div id='new-album' style={{visibility: hidden ? 'hidden' : 'visible'}}>
       <div id='new-album-container'>
         <form id='album-form'>
           <input id='title-input' name='title' type="text" placeholder='Enter Title' onChange={handleChange}/>

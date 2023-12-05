@@ -1,7 +1,6 @@
 import './Accordion.css';
 import About from '../../pages/About/About';
 import Album from '../Album/Album';
-import Choreography from '../../pages/Choreography/Choreography';
 import Resume from '../../pages/Resume/Resume';
 import { useRef, useState } from 'react';
 
@@ -75,7 +74,7 @@ export default function Accordion({user}) {
       </div>
       <div ref={choreoRef} className={closed.choreo} id='choreographer-tab'>
         <div onClick={() => handleExpand('choreo')} ref={choreoTitleRef} className="tab-title"><h1>Choreography</h1></div>
-        <Album title='Choreography' currentRef={refs.choreo.current} setter={setClosed} closed={closed} page='choreo' />
+        <Album title='Choreography' currentRef={refs.choreo.current} setter={setClosed} closed={closed} page='choreo' user={user} />
       </div>
       <div ref={perfRef} className={closed.perf} id='performance-tab'>
         <div onClick={() => handleExpand('perf')} ref={perfTitleRef} className="tab-title"><h1>Performance</h1></div>
