@@ -25,7 +25,7 @@ export default function NewAlbumForm({category}) {
     <div id='new-album'>
       <div id='new-album-container'>
         <form id='album-form'>
-          <input id='title-input' name='title' type="text" placeholder='Title' onChange={handleChange}/>
+          <input id='title-input' name='title' type="text" placeholder='Enter Title' onChange={handleChange}/>
           <label htmlFor="thumbnail">Thumbnail Image:</label>
           <input ref={thumbnailRef} id='thumbnail' name='thumbnail' type="file" placeholder='Title'/>
           <label htmlFor="photos">Select Photos:</label>

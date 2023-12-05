@@ -1,5 +1,5 @@
 import './Choreography.css'
-import Albums from "../../components/Albums/Albums";
+import Albums from "../../components/Album/Album";
 import Header from "../../components/Header/Header";
 import Line from '../../components/Line/Line';
 

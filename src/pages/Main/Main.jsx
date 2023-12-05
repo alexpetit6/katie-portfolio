@@ -4,14 +4,14 @@ import ContactBar from '../../components/ContactBar/ContactBar';
 import Accordion from '../../components/Accordion/Accordion';
 import NewAlbumForm from '../../components/NewAlbumForm/NewAlbumForm';
 
-export default function Main () {
+export default function Main({user}) {
 
   return (
     <>
     <ContactBar />
     <Landing />
-    <NewAlbumForm />
-    <Accordion />
+    {/* <NewAlbumForm /> */}
+    <Accordion user={user} />
     </>
   )
 

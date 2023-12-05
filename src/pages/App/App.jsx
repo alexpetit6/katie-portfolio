@@ -17,7 +17,7 @@ export default function App() {
             {/* <NavBar user={user} setUser={setUser} /> */}
             <Routes>
               {/* Route components in here */}
-              <Route path="/" element={<Main />} />
+              <Route path="/" element={<Main user={user} />} />
               <Route path='/gallery' element={<Gallery title="Book of Mormon"/>} />
             </Routes>
           </>

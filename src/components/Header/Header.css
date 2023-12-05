@@ -13,7 +13,6 @@
 
 .page-header > h1 {
   grid-column: 2;
-  width: 50vw;
 }
 
 .page-header > i {
@@ -22,7 +21,7 @@
   top: 0;
   justify-self: end;
   transition: all 1s;
-
+  
 }
 
 .page-header > i:hover {
@@ -30,4 +29,12 @@
   cursor: pointer;
   top: 10px;
   text-shadow: 0 -6px 5px black;
+}
+
+@media (max-width: 576px) {
+  .page-header > h1 {
+    position: relative;
+    left: -40px;
+  }
+  
 }

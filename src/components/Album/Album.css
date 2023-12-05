@@ -1,0 +1,33 @@
+
+
+.album-thumbnails-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.double-line {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 100vw;
+}
+
+.double-line > .line {
+  width: 40vw;
+}
+
+@media (max-width: 1024px) {
+  .double-line {
+    grid-template-columns: 1fr;
+  }
+  
+  .double-line > .line {
+    width: 90vw;
+    height: 2.5px;
+  }
+
+  .album-thumbnails-container {
+    grid-template-columns: 1fr;
+  }
+}
