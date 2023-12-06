@@ -14,6 +14,9 @@
 }
 
 .warning {
-  border-color: black;
   background-color: yellow;
+}
+
+.danger {
+  background-color: red;
 }

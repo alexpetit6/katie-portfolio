@@ -27,4 +27,8 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+button {
+	cursor: pointer;
+}
+
 /* CSS Custom Properties */
