@@ -5,7 +5,7 @@ export async function getAlbums() {
   return sendRequest(BASE_URL);
 }
 
-export async function postDetail(id) {
+export async function albumDetail(id) {
   console.log('detail')
   return sendRequest(`${BASE_URL}/${id}`);
 }

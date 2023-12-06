@@ -1,11 +1,11 @@
 import './Photo.css';
 import Line from '../Line/Line';
 
-export default function Photo() {
+export default function Photo({ img }) {
   return (
     <div className='photo-thumbnail'>
       <div className='photo-thumbnail-img'>
-        <img src="https://i.imgur.com/Rls5q4N.jpg" alt="" />
+        <img src={img} alt="" />
       </div>
       <Line />
     </div>

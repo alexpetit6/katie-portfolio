@@ -18,7 +18,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<Main user={user} />} />
-              <Route path='/gallery' element={<Gallery title="Book of Mormon"/>} />
+              <Route path='/gallery/:albumId' element={<Gallery user={user} />} />
             </Routes>
           </>
           :
