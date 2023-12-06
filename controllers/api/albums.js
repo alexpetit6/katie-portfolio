@@ -34,8 +34,10 @@ async function create(req, res) {
     }));
     const album = await Album.create({
       title: req.body.title,
+      category: req.body.category,
       thumbnail: thumbnailURL,
       photos: photoURLs,
+
     });
     res.json(album);
   } catch (err) {

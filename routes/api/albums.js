@@ -3,8 +3,8 @@ const router = express.Router();
 const albumsCtrl = require('../../controllers/api/albums');
 const upload = require("multer")();
 const ensureLoggedIn = require('../../config/ensureLoggedIn')
-//All paths start with 'api/albums'
 const imgsUpload = upload.fields([{ name: 'thumbnail', maxCount: 1 }, { name: 'photos', maxCount: 18 }]);
+//All paths start with 'api/albums'
 
 router.get('/', albumsCtrl.index);
 router.get('/:id', albumsCtrl.show);

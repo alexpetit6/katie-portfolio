@@ -1,15 +1,17 @@
 import './NewAlbumForm.css';
 import { useState, useRef } from 'react';
+import { create } from '../../utilities/albums-api';
 
 export default function NewAlbumForm({category, hidden, setOpen}) {
   // const { albumId } = useParams();
 
   const baseData = {
     title: '',
-    category: category
+    category: 'choreography'
   };
 
   const [formData, setFormData] = useState(baseData);
+  const [isLoading, setLoading] = useState(false);
 
   const thumbnailRef = useRef(null);
   const photosRef = useRef(null);
@@ -26,11 +28,31 @@ export default function NewAlbumForm({category, hidden, setOpen}) {
     });
   }
 
+  async function handleSubmit(evt) {
+    evt.preventDefault();
+    setLoading(true);
+    const newFormData = new FormData();
+    // newFormData.append('title', formData.title)
+    // newFormData.append('category', 'choreography')
+    for (const [key, value] of Object.entries(formData)) {
+      newFormData.append(key, value);
+    };
+    newFormData.append('thumbnail', thumbnailRef.current.files[0]);
+    for (let i = 0; i < photosRef.current.files.length; i++) {
+      newFormData.append('photos', photosRef.current.files[i])
+    };
+    // photosRef.current.files.forEach((f) => newFormData.append('photos', f));
+    // newFormData.append('photos', photosRef.current.files);
+    await create(newFormData);
+    setFormData(baseData);
+    setLoading(false);
+  }
+
   return (
     <div id='new-album' style={{visibility: hidden ? 'hidden' : 'visible'}}>
       <button onClick={handleClose} id='close-album-form-btn'>X</button>
       <div id='new-album-container'>
-        <form id='album-form'>
+        <form id='album-form' onSubmit={handleSubmit}>
           <input id='title-input' name='title' type="text" placeholder='Enter Title' onChange={handleChange}/>
           <label htmlFor="thumbnail">Thumbnail Image:</label>
           <input ref={thumbnailRef} id='thumbnail' name='thumbnail' type="file" placeholder='Title'/>

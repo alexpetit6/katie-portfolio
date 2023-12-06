@@ -12,6 +12,8 @@ export default function OpenAlbumForm({user}) {
     }
   }
 
+
+
   return (
     <div className="open-album-form">
       {user ? <button onClick={handleClick} className='admin-button open-album-btn success'>Add Album</button> : null}
