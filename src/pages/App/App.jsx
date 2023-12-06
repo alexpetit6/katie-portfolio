@@ -5,7 +5,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Main from '../Main/Main';
-import Gallery from '../../components/Gallery/Gallery';
+import AlbumDetail from '../../components/AlbumDetail/AlbumDetail';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -18,7 +18,7 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<Main user={user} />} />
-              <Route path='/gallery/:albumId' element={<Gallery user={user} />} />
+              <Route path='/album/:albumId' element={<AlbumDetail user={user} />} />
             </Routes>
           </>
           :

@@ -1,4 +1,4 @@
-import './Gallery.css';
+import './AlbumDetail.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { albumDetail } from '../../utilities/albums-api';
@@ -7,7 +7,7 @@ import Photo from '../Photo/Photo';
 import Header from '../Header/Header';
 import Line from '../Line/Line';
 
-export default function Gallery({title}) {
+export default function Gallery({user}) {
   const [album, setAlbum] = useState();
 
   const { albumId } = useParams();
@@ -19,19 +19,23 @@ export default function Gallery({title}) {
     }
     getAlbum();
   }, []);
+
+  function handleEdit() {
+    return
+  }
   
   
   if(album) {
     const Photos = album.photos.map((p) => <Photo img={p} />);
     
     return(
-      <div className="gallery">
-        <Header title={title} />
+      <div className="album-detail">
+        <Header title={album.title} />
+        {user ? <button onClick={handleEdit} className='edit-album-btn admin-button warning'>Edit Album</button> : null}
         <div className="triple-line"><Line/><Line/><Line/></div>
         <Fancybox newClass='fancybox-container'>
           {Photos}
         </Fancybox>
-  
       </div>
   
     ) 

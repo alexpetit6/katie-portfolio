@@ -1,5 +1,11 @@
-.gallery {
+.album-detail {
   background-color: red;
+}
+
+.edit-album-btn {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .triple-line {
