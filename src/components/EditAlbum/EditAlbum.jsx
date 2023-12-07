@@ -1,24 +1,36 @@
 import './EditAlbum.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { update } from '../../utilities/albums-api';
+import { albumDetail } from '../../utilities/albums-api';
 import Fancybox from '../FancyBox/FancyBox';
 import Line from '../Line/Line';
+import Photo from '../Photo/Photo';
 
-export default function EditAlbum({Photos, album, setAlbum, setEditing, user}) {
-  const [title, setTitle] = useState(album.title);
+export default function EditAlbum({ user }) {
+  const [album, setAlbum] = useState();
+  const [title, setTitle] = useState('');
   const [isLoading, setLoading] = useState(false);
 
+  const { albumId } = useParams();
+  
   const thumbnailRef = useRef(null);
   const photosRef = useRef(null);
 
-  function handleStopEdit() {
-    setEditing(false);
-  }
+  useEffect(function() {
+    async function getAlbum() {
+      const a = await albumDetail(albumId);
+      setAlbum(a);
+      setTitle(a.title);
+    }
+    getAlbum();
+  }, []);
 
   function handleChange(evt) {
     setTitle(evt.target.value)
   }
 
+  
   async function handleSubmit(evt) {
     evt.preventDefault();
     setLoading(true);
@@ -33,25 +45,27 @@ export default function EditAlbum({Photos, album, setAlbum, setEditing, user}) {
     const updatedAlbum = await update(album._id, newFormData);
     setAlbum(updatedAlbum);
     setTitle(updatedAlbum.title);
-
     setLoading(false);
+  }
+  
+  if (album) {
+    const Photos = album.photos.map((p) => <Photo img={p} setAlbum={setAlbum} album={album} />);
 
-    
+    return (
+      <div className='edit-album'>
+        <button className='cancel-edit-album-btn warning'>CANCEL</button>
+        <form onSubmit={handleSubmit} className='edit-album-form'>
+          <input ref={photosRef} id='add-photos-input' type="file" multiple />
+          <input id='edit-title-input' onChange={handleChange} type="text" value={title} />
+          <button type='submit' className='submit-album-update-btn success'>Submit Changes</button>
+        </form>
+        <div className="triple-line"><Line/></div>
+        <Fancybox newClass='fancybox-container'>
+          {Photos}
+        </Fancybox>
+      </div>
+    )
   }
 
-  return (
-    <div className='edit-album'>
-      <button onClick={handleStopEdit} className='cancel-edit-album-btn warning'>CANCEL</button>
-      <form className='edit-album-form'>
-        <input id='add-photos-input' type="file" multiple />
-        <input id='edit-title-input' onChange={handleChange} type="text" value={title} />
-        <button className='submit-album-update-btn success'>Submit Changes</button>
-      </form>
-      <div className="triple-line"><Line/><Line/><Line/></div>
-      {/* <Header title={album.title} /> */}
-      <Fancybox newClass='fancybox-container'>
-        {Photos}
-      </Fancybox>
-    </div>
-  )
-}
+  }
+  

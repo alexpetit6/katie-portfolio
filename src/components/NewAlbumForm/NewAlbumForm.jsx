@@ -39,7 +39,7 @@ export default function NewAlbumForm({category, hidden, setOpen}) {
     };
     newFormData.append('thumbnail', thumbnailRef.current.files[0]);
     for (let i = 0; i < photosRef.current.files.length; i++) {
-      newFormData.append('photos', photosRef.current.files[i])
+      newFormData.append('photos', photosRef.current.files[i]);
     };
     await create(newFormData);
     thumbnailRef.current.value = '';

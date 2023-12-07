@@ -7,6 +7,7 @@ module.exports = {
   create,
   update,
   delete: deleteAlbum,
+  deletePhoto
 };
 
 async function index(req, res) {
@@ -79,5 +80,18 @@ async function deleteAlbum(req, res) {
     res.json(albums);
   } catch (err) {
     res.json(err);
+  }
+}
+
+async function deletePhoto(req, res) {
+  try {
+    const photoUrl = req.body.url;
+    const album = await Album.findById(req.params.id);
+    const photoIdx = album.photos.findIndex((p) => p === photoUrl);
+    album.photos.splice(photoIdx, 1);
+    await album.save();
+    res.json(album);
+  } catch (err) {
+    console.log(err)
   }
 }

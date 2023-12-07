@@ -26,3 +26,9 @@
 .submit-album-update-btn {
   font-size: 1em;
 }
+
+.fancybox-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}

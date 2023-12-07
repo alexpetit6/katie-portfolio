@@ -18,6 +18,11 @@ export async function deleteAlbum(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
+export async function deletePhoto(id, formData) {
+  console.log('delete photo')
+  return sendRequest(`${BASE_URL}/photo/${id}`, 'DELETE', formData);
+}
+
 export async function update(id, newData) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', newData, true);
 }

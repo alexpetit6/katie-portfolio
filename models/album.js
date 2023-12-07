@@ -18,6 +18,7 @@ const albumSchema = new Schema({
     type: String,
     required: true
   }
-})
+});
+
 
 module.exports = mongoose.model('Album', albumSchema);
