@@ -9,19 +9,14 @@ export default function AlbumThumbnail({album, setAlbums, user}) {
 
   return (
     <div className='album-thumbnail'>
-      <Link to={`/album/${album._id}`}><button className='edit-album-btn admin-button warning'>Edit Album</button></Link>
+      <Link className='edit-album-btn' to={`/album/${album._id}`}>
+        <button className='admin-button warning'>Edit Album</button>
+      </Link>
       <h1>{album.title}</h1>
-        {/* <div className='album-thumbnail-img'> */}
           <Fancybox newClass='fancybox-thumbnail'>
             <img data-fancybox src={album.thumbnail} alt="" />
             {Photos}
           </Fancybox>
-        {/* </div> */}
-      {/* <Link id='album-link' to={`/album/${album._id}`}>
-        <div className='album-thumbnail-img'>
-          <img src={album.thumbnail} alt="" />
-        </div>
-      </Link> */}
       <Line />
     </div>
   )

@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { update } from '../../utilities/albums-api';
 import { albumDetail } from '../../utilities/albums-api';
+import { Link } from 'react-router-dom';
 import Fancybox from '../FancyBox/FancyBox';
 import Line from '../Line/Line';
 import Photo from '../Photo/Photo';
@@ -53,7 +54,9 @@ export default function EditAlbum({ user }) {
 
     return (
       <div className='edit-album'>
-        <button className='cancel-edit-album-btn warning'>CANCEL</button>
+        <Link to='/'>
+          <button className='cancel-edit-album-btn warning'>CANCEL</button>
+        </Link>
         <form onSubmit={handleSubmit} className='edit-album-form'>
           <input id='edit-title-input' onChange={handleChange} type="text" value={title} />
           <button type='submit' className='submit-album-update-btn success'>Submit Changes</button>
