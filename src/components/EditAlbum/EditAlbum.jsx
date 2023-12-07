@@ -66,7 +66,7 @@ export default function EditAlbum({ user }) {
               <img src={album.thumbnail} />
             </div>
             <label htmlFor="edit-thumbnail-input">Change Thumbnail:</label>
-            <input type="file" ref={thumbnailRef} />
+            <input id='edit-thumbnail-input' type="file" ref={thumbnailRef} />
           </div>
         </form>
         <div className="triple-line"><Line/></div>
