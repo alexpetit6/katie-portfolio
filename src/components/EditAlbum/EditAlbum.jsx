@@ -55,11 +55,23 @@ export default function EditAlbum({ user }) {
       <div className='edit-album'>
         <button className='cancel-edit-album-btn warning'>CANCEL</button>
         <form onSubmit={handleSubmit} className='edit-album-form'>
-          <input ref={photosRef} id='add-photos-input' type="file" multiple />
           <input id='edit-title-input' onChange={handleChange} type="text" value={title} />
           <button type='submit' className='submit-album-update-btn success'>Submit Changes</button>
+          <div className='add-photos'>
+            <label htmlFor="add-photos-input">Add More Photos:</label>
+            <input ref={photosRef} id='add-photos-input' type="file" multiple />
+          </div>
+          <div className='edit-thumbnail'>
+            <div className='edit-thumbnail-img'>
+              <img src={album.thumbnail} />
+            </div>
+            <label htmlFor="edit-thumbnail-input">Change Thumbnail:</label>
+            <input type="file" ref={thumbnailRef} />
+          </div>
         </form>
         <div className="triple-line"><Line/></div>
+
+
         <Fancybox newClass='fancybox-container'>
           {Photos}
         </Fancybox>

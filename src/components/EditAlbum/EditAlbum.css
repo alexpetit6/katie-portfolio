@@ -13,22 +13,47 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 15vh;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  height: 60vh;
   width: 100vw;
 }
 
 #edit-title-input {
   font-size: calc(1em + 4vw);
   height: 10vh;
+  grid-column: 2;
 }
 
 .submit-album-update-btn {
   font-size: 1em;
 }
 
+.add-photos {
+  display: flex;
+  justify-content: center;
+}
+
+#add-photos-input {
+  width: 200px;
+}
+
 .fancybox-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
+}
+
+.edit-thumbnail {
+  margin: 30px;
+}
+
+.edit-thumbnail-img {
+  overflow: hidden;
+  height: 20vw;
+  width: 30vw;
+  cursor: pointer;
+}
+
+.edit-thumbnail-img > img {
+  width: 100%;
 }
