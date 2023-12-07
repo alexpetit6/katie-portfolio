@@ -33,7 +33,7 @@ export default function Gallery({user}) {
     return(
       isEditing
       ?
-      <EditAlbum album={album} Photos={Photos} user={user} setEditing={setEditing} />
+      <EditAlbum album={album} setAlbum={setAlbum} Photos={Photos} user={user} setEditing={setEditing} />
       :
       <div className="album-detail">
         <Header title={album.title} />

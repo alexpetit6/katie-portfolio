@@ -14,7 +14,7 @@ export async function create(formData) {
   return sendRequest(BASE_URL, 'POST', formData, true);
 }
 
-export async function deletePost(id) {
+export async function deleteAlbum(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 

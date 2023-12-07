@@ -12,13 +12,13 @@
   font-family: 'Tenor Sans', sans-serif;
 }
 
-.album-thumbnail-img {
+.fancybox-thumbnail {
   overflow: hidden;
   height: 20vw;
   width: 30vw;
 }
 
-.album-thumbnail-img > img {
+.fancybox-thumbnail > img {
   width: 100%;
 }
 
@@ -37,7 +37,7 @@
     font-family: 'Tenor Sans', sans-serif;
   }
   
-  .album-thumbnail-img {
+  .fancybox-thumbnail {
     height: 46.66vw;
     width: 70vw;
   }
@@ -48,12 +48,12 @@
   
 }
 @media (max-width: 576px) {
-  .album-thumbnail-img {
+  .fancybox-thumbnail {
     height: 80vw;
     width: 80vw;
   }
   
-  .album-thumbnail-img > img {
+  .fancybox-thumbnail > img {
     height: 100%;
     width: auto;
   }

@@ -10,6 +10,6 @@ router.get('/', albumsCtrl.index);
 router.get('/:id', albumsCtrl.show);
 router.post('/', ensureLoggedIn, imgsUpload, albumsCtrl.create);
 router.delete('/:id', ensureLoggedIn, albumsCtrl.delete);
-router.put('/:id', ensureLoggedIn, upload.single('photo'), albumsCtrl.update);
+router.put('/:id', ensureLoggedIn, imgsUpload, albumsCtrl.update);
 
 module.exports = router;
