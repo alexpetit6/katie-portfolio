@@ -11,9 +11,8 @@ export default function AlbumThumbnail({album, setAlbums, user}) {
 
   function handleClick() {
     if (user) {
-      document.body.style.overflow = 'hidden';
       setHidden(false);
-    }
+    };
   }
 
   const Photos = album.photos.map((p) => <Photo img={p} />);
@@ -42,6 +41,6 @@ export default function AlbumThumbnail({album, setAlbums, user}) {
       <Line />
     </div>
     :
-    <DeleteAlbum user={user} setAlbum={setAlbums} album={album} setHidden={setHidden} hidden={hidden}/>
+    <DeleteAlbum user={user} setAlbums={setAlbums} album={album} setHidden={setHidden} hidden={hidden}/>
   )
 }
