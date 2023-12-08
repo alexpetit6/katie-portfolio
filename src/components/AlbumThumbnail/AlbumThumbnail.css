@@ -9,9 +9,15 @@
 }
 
 .edit-album-btn {
+  position: absolute;
   top: 6.4vh;
   left: 0;
+}
+
+.delete-album-btn {
   position: absolute;
+  top: 6.4vh;
+  right: 0;
 }
 
 .album-thumbnail > h1 {
