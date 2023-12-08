@@ -32,6 +32,12 @@
   transition: all 1s
 }
 
+.closed-tab:hover > .performance-fancybox > .tab-title {
+  height: 24vh;
+  font-size: calc(1.5em + 4vw);
+  transition: all 1s
+}
+
 .open-tab {
   overflow: hidden;
 }
@@ -98,7 +104,7 @@
   grid-column-start: 2;
 }
 
-#performance-tab > .tab-title > h1 {
+.performance-fancybox > .tab-title > h1 {
   grid-column-start: 3;
 }
 
@@ -110,3 +116,10 @@
   grid-column-start: 5;
 }
 
+/* .performance-fancybox {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+}
+
+.performance-fancybox  */
