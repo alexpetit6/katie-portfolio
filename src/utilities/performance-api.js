@@ -6,9 +6,9 @@ export async function getPerformance() {
 }
 
 export async function addPhotos(formData) {
-  return sendRequest(BASE_URL, 'POST', formData);
+  return sendRequest(BASE_URL, 'POST', formData, true);
 }
 
-export async function deletePhoto( formData ) {
+export async function deletePerfPhoto( formData ) {
   return sendRequest(BASE_URL, 'DELETE', formData);
 }

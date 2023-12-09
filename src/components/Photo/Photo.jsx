@@ -1,12 +1,19 @@
 import './Photo.css';
 import Line from '../Line/Line';
 import { deletePhoto } from '../../utilities/albums-api';
+import { deletePerfPhoto } from '../../utilities/performance-api';
 
-export default function Photo({ img, album, setAlbum }) {
+export default function Photo({ img, album, setAlbum, performance, setPerformance }) {
 
   async function handleDelete() {
-    const updatedAlbum = await deletePhoto(album._id, {url: img});
-    setAlbum(updatedAlbum);
+    if (album) {
+      const updatedAlbum = await deletePhoto(album._id, {url: img});
+      setAlbum(updatedAlbum);
+    };
+    if (performance) {
+      const updatedPerformance = await deletePerfPhoto({url: img});
+      setPerformance(updatedPerformance);
+    };
   }
 
   return (

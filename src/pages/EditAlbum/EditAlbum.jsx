@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import { update } from '../../utilities/albums-api';
 import { albumDetail } from '../../utilities/albums-api';
 import { Link } from 'react-router-dom';
-import Fancybox from '../FancyBox/FancyBox';
-import Line from '../Line/Line';
-import Photo from '../Photo/Photo';
+import Fancybox from '../../components/FancyBox/FancyBox';
+import Line from '../../components/Line/Line';
+import Photo from '../../components/Photo/Photo';
 
 export default function EditAlbum({ user }) {
   const [album, setAlbum] = useState();

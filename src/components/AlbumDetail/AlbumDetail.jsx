@@ -6,7 +6,7 @@ import Fancybox from '../FancyBox/FancyBox';
 import Photo from '../Photo/Photo';
 import Header from '../Header/Header';
 import Line from '../Line/Line';
-import EditAlbum from '../EditAlbum/EditAlbum';
+import EditAlbum from '../../pages/EditAlbum/EditAlbum';
 
 export default function Gallery({user}) {
   const [album, setAlbum] = useState();

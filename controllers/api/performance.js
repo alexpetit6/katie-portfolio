@@ -9,7 +9,7 @@ module.exports = {
 
 async function show(req, res) {
   try {
-    const performance = await Performance.find({});
+    const performance = await Performance.findOne({});
     res.json(performance);
   }
   catch (err) {
@@ -19,7 +19,7 @@ async function show(req, res) {
 
 async function addPhotos(req, res) {
   try {
-    const performance = await Performance.find({});
+    const performance = await Performance.findOne({});
     if (req.files['photos']) {
       const newPhotoURLs = await Promise.all(req.files['photos'].map(async (p) => {
         return await uploadFile(p);
@@ -37,12 +37,12 @@ async function addPhotos(req, res) {
 async function deletePhoto(req, res) {
   try {
     const photoUrl = req.body.url;
-    const performance = await Performance.find({});
+    const performance = await Performance.findOne({});
     const photoIdx = performance.photos.findIndex((p) => p === photoUrl);
     performance.photos.splice(photoIdx, 1);
     await performance.save();
     res.json(performance);
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
 }

@@ -4,7 +4,8 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import Main from '../Main/Main';
-import EditAlbum from '../../components/EditAlbum/EditAlbum';
+import EditAlbum from '../EditAlbum/EditAlbum';
+import EditPerformance from '../EditPerformance/EditPerformance';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -17,6 +18,7 @@ export default function App() {
               {/* Route components in here */}
               <Route path="/" element={<Main user={user} />} />
               <Route path='/album/:albumId' element={<EditAlbum user={user} />} />
+              <Route path='/edit-performance' element={<EditPerformance user={user} />} />
             </Routes>
           </>
           :
