@@ -1,6 +1,7 @@
 import './EditPerformance.css';
 import { useEffect, useState, useRef } from 'react';
 import { getPerformance, addPhotos } from '../../utilities/performance-api';
+import { Link } from 'react-router-dom';
 import Fancybox from '../../components/FancyBox/FancyBox';
 import Photo from '../../components/Photo/Photo';
 
@@ -37,7 +38,9 @@ export default function EditPerformance() {
   
     return (
       <div id="edit-performance">
-        <button className='cancel-edit-album-btn warning'>CANCEL</button>
+        <Link to='/'>
+          <button className='cancel-edit-album-btn warning'>CANCEL</button>
+        </Link>
         <div id="edit-performance-header">
           <h1>Performance</h1>
           <form onSubmit={handleSubmit} id='performance-form'>

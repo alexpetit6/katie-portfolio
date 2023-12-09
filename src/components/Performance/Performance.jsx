@@ -1,20 +1,33 @@
 import './Performance.css';
-import Fancybox from '../FancyBox/FancyBox';
+import { useEffect, useState } from 'react';
+import { getPerformance } from '../../utilities/performance-api';
 
 export default function Performance() {
+  const[performance, setPerformance] = useState();
 
-  function handleClick() {
-    Fancybox.fromSelector('[data-fancybox="performance"]');
-  }
+  useEffect(function() {
+    async function getPerf() {
+      const performance = getPerformance();
+      setPerformance(performance);
+    }
+    getPerf();
+  }, []);
 
-  return (
-    <div id='performance'>
-        <img data-fancybox='performance' src="https://i.imgur.com/raT7EFb.jpg" alt="" />
-        <img data-fancybox='performance' src="https://i.imgur.com/raT7EFb.jpg" alt="" />
-        <img data-fancybox='performance' src="https://i.imgur.com/raT7EFb.jpg" alt="" />
-        <img data-fancybox='performance' src="https://i.imgur.com/raT7EFb.jpg" alt="" />
-        <img data-fancybox='performance' src="https://i.imgur.com/raT7EFb.jpg" alt="" />
-        <img data-fancybox='performance' src="https://i.imgur.com/raT7EFb.jpg" alt="" />
-    </div>
-  )
+  useEffect(function() {
+    async function getPerf() {
+      const performance = await getPerformance();
+      setPerformance(performance);
+    }
+    getPerf();
+  }, []);
+
+  if (performance) {
+    const Photos = performance.photos?.map((p) => <img data-fancybox='performance' src={p} />)
+  
+    return (
+      <div id='performance'>
+        {Photos}
+      </div>
+    );
+  };
 }
