@@ -1,10 +1,11 @@
 import './Accordion.css';
+import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import About from '../../pages/About/About';
 import Album from '../Album/Album';
 import Fancybox from '../FancyBox/FancyBox';
 import Performance from '../Performance/Performance';
 import Resume from '../../pages/Resume/Resume';
-import { useRef, useState } from 'react';
 
 export default function Accordion({user}) {
   const [closed, setClosed] = useState({
@@ -79,6 +80,14 @@ export default function Accordion({user}) {
         <Album title='Choreography' currentRef={refs.choreo.current} setter={setClosed} closed={closed} page='choreo' user={user} />
       </div>
       <div ref={perfRef} className={closed.perf} id='performance-tab'>
+        { 
+        user 
+        ?
+        <Link to='/edit-performance'>
+          <button className='edit-performance-btn admin-button warning'>EDIT</button>
+        </Link>
+        : null
+        }
         <Fancybox newClass='performance-fancybox'>
           <div data-fancybox-trigger='performance' ref={perfTitleRef} className="tab-title"><h1>Performance</h1></div>
           <Performance />

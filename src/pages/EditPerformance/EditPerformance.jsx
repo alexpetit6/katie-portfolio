@@ -48,7 +48,7 @@ export default function EditPerformance() {
               <label htmlFor="performance-photos-input">Add More Photos:</label>
               <input ref={photosRef} id='performance-photos-input' type="file" multiple />
             </div>
-            <button type='submit' className='submit-performance-btn success'>Submit Photos</button>
+            <button type='submit' className='submit-performance-btn success' disabled={isLoading}>{isLoading ? 'Uploading Photos...' : 'Upload Photos'}</button>
           </form>
         </div>
         <Fancybox newClass='fancybox-container'>

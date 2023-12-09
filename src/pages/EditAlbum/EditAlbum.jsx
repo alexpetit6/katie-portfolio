@@ -59,7 +59,7 @@ export default function EditAlbum({ user }) {
         </Link>
         <form onSubmit={handleSubmit} className='edit-album-form'>
           <input id='edit-title-input' onChange={handleChange} type="text" value={title} />
-          <button type='submit' className='submit-album-update-btn success'>Submit Changes</button>
+          <button type='submit' className='submit-album-update-btn success' disabled={isLoading}>{isLoading ? 'Submitting...' : 'Submit Changes'}</button>
           <div className='add-photos'>
             <label htmlFor="add-photos-input">Add More Photos:</label>
             <input ref={photosRef} id='add-photos-input' type="file" multiple />

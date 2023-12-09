@@ -108,6 +108,10 @@
   grid-column-start: 3;
 }
 
+.edit-performance-btn {
+  position: absolute;
+}
+
 #resume-tab > .tab-title > h1 {
   grid-column-start: 4;
 }
