@@ -95,7 +95,7 @@ export default function Accordion({user}) {
       </div>
       <div ref={resumeRef} className={closed.resume} id='resume-tab'>
         <div onClick={() => handleExpand('resume')} ref={resumeTitleRef} className="tab-title"><h1>Resumes</h1></div>
-        <Resume currentRef={refs.resume.current} setter={setClosed} closed={closed} />
+        <Resume currentRef={refs.resume.current} setter={setClosed} closed={closed} user={user} />
       </div>
       <div ref={contactRef} className={closed.contact} id='contact-tab'>
         <div onClick={() => handleExpand('contact')} ref={contactTitleRef} className="tab-title"><h1>Contact</h1></div>

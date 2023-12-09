@@ -62,5 +62,5 @@ export default function NewAlbumForm({category, hidden, setOpen}) {
         </form>
       </div>
     </div>
-  )
+  );
 }
