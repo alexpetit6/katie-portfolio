@@ -6,6 +6,8 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 const pdfsUpload = upload.fields([{ name: 'choreoResume', maxCount: 1 }, { name: 'perfResume', maxCount: 1 }]);
 //All paths start with 'api/resumes'
 
-router.put('/', ensureLoggedIn, pdfsUpload, resumesCtrl.updateResume);
+
+router.get('/', resumesCtrl.show);
+router.put('/', ensureLoggedIn, pdfsUpload, resumesCtrl.update);
 
 module.exports = router;

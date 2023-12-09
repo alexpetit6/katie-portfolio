@@ -1,5 +1,5 @@
 import './Resume.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Line from '../../components/Line/Line';
 import Header from '../../components/Header/Header';
 import EditResumePDF from '../../components/EditResumePDF/EditResumePDF';
@@ -9,6 +9,12 @@ export default function Resume({setter, closed, currentRef, user}) {
     choreo: false,
     perf: false
   });
+
+  useEffect(function () {
+    async function fetchResumes() {
+      
+    }
+  })
 
   function handleClick(type) {
     setEditing({
