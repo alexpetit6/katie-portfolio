@@ -1,14 +1,29 @@
 import './EditResumePDF.css';
+import { useRef, useState } from 'react';
+import { updateResume } from '../../utilities/resumes-api';
 
-export default function EditResumePDF({handleClick, type}) {
 
+export default function EditResumePDF({handleClick, setResume, type}) {
+  const [isLoading, setLoading] = useState(false);
+
+  const pdfRef = useRef(null);
+
+  async function handleSubmit(evt) {
+    evt.preventDefault();
+    setLoading(true);
+    const newFormData = new FormData();
+    newFormData.append(type, pdfRef.current.files[0]);
+    const updatedResume = await updateResume(newFormData);
+    setResume(updatedResume);
+    setLoading(false);
+  }
 
   return (
     <div className="edit-resume">
-      <form className='edit-resume-form'>
+      <form onSubmit={handleSubmit} className='edit-resume-form'>
         <label htmlFor="pdf-input">Change PDF:</label>
-        <input id='pdf-input' type="file" />
-        <button className='submit-resume-btn success'>Upload PDF</button>
+        <input ref={pdfRef} id='pdf-input' type="file" />
+        <button type='submit' className='submit-resume-btn success' disabled={isLoading}>{isLoading ? 'Uploading...' : 'Upload PDF'}</button>
       </form>
       <button onClick={() => handleClick(type)} className='stop-edit-resume-btn warning'>CANCEL</button>
     </div>

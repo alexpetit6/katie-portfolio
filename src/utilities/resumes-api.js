@@ -6,5 +6,5 @@ export async function getResumes() {
 }
 
 export async function updateResume(formData) {
-  return sendRequest(BASE_URL, 'POST', formData, true);
+  return sendRequest(BASE_URL, 'PUT', formData, true);
 }
