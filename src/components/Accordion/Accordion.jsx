@@ -6,6 +6,7 @@ import Album from '../Album/Album';
 import Fancybox from '../FancyBox/FancyBox';
 import Performance from '../Performance/Performance';
 import Resume from '../../pages/Resume/Resume';
+import Contact from '../../pages/Contact/Contact';
 
 export default function Accordion({user}) {
   const [closed, setClosed] = useState({
@@ -99,6 +100,7 @@ export default function Accordion({user}) {
       </div>
       <div ref={contactRef} className={closed.contact} id='contact-tab'>
         <div onClick={() => handleExpand('contact')} ref={contactTitleRef} className="tab-title"><h1>Contact</h1></div>
+        <Contact currentRef={refs.contact.current} setter={setClosed} closed={closed} />
       </div>
     </div>
   )

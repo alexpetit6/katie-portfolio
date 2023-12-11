@@ -7,6 +7,21 @@
   cursor: pointer;
 }
 
+.user-btn {
+  height: 6vw;
+  padding: 0 50px;
+  color: black;
+  font-size: calc(0.3em + 1vw);
+  font-family: 'Montserrat', sans-serif;
+  border: 8px double black;
+  border-radius: 100px;
+  transition: all 1s;
+}
+
+.user-btn:hover {
+  border-width: 5px;
+}
+
 .success {
   border-color: white;
   background-color: rgb(9, 104, 0);
@@ -19,4 +34,21 @@
 
 .danger {
   background-color: red;
+}
+
+@media (max-width: 1024px) {
+
+  .user-btn {
+    height: 12vw;
+    font-size: calc(0.3em + 2.5vw);
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .user-btn {
+    height: 20vw;
+    font-size: calc(0.3em + 4vw);
+  }
 }
