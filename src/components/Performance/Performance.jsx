@@ -1,5 +1,5 @@
 import './Performance.css';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getPerformance } from '../../utilities/performance-api';
 
 export default function Performance() {

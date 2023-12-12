@@ -1,5 +1,5 @@
 import './Resume.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getResumes } from '../../utilities/resumes-api';
 import Line from '../../components/Line/Line';
 import Header from '../../components/Header/Header';

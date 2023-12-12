@@ -1,5 +1,5 @@
 import './AlbumThumbnail.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Line from '../Line/Line';
 import Fancybox from '../FancyBox/FancyBox';

@@ -1,8 +1,7 @@
-import { useStat, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
-import { sendGridMail } from '../../utilities/send-grid-api';
 import AuthPage from '../AuthPage/AuthPage';
 import Main from '../Main/Main';
 import EditAlbum from '../EditAlbum/EditAlbum';

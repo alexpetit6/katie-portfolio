@@ -1,5 +1,5 @@
 import './NewAlbumForm.css';
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { create } from '../../utilities/albums-api';
 
 export default function NewAlbumForm({category, hidden, setOpen}) {

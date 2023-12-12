@@ -1,5 +1,5 @@
 import './EditResumePDF.css';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { updateResume } from '../../utilities/resumes-api';
 
 

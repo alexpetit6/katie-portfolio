@@ -1,5 +1,5 @@
 import './EditPerformance.css';
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { getPerformance, addPhotos } from '../../utilities/performance-api';
 import { Link } from 'react-router-dom';
 import Fancybox from '../../components/FancyBox/FancyBox';
