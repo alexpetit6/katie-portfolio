@@ -36,11 +36,18 @@
 
 #landing-bg > i {
   position: absolute;
+  cursor: pointer;
   text-shadow: 5px -2px 2px black;
   bottom: 0;
   font-size: calc(4em + 4vw);
   color: white;
   rotate: 180deg;
+  transition: all 1s;
+}
+
+#landing-bg > i:hover {
+  bottom: 10px;
+  text-shadow: 8px -8px 2px black;
 }
 
 @media (max-width: 1024px) {

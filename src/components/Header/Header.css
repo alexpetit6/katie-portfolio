@@ -25,10 +25,9 @@
 }
 
 .page-header > i:hover {
-  position: relative;
   cursor: pointer;
   top: 10px;
-  text-shadow: 0 -6px 5px black;
+  text-shadow: -6px -6px 5px black;
 }
 
 @media (max-width: 576px) {
