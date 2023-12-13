@@ -10,6 +10,7 @@ export default function Main({user}) {
     <ContactBar />
     <Landing />
     <Accordion user={user} />
+    <img id='accordion-bg' src="/accordion-bg.jpg" alt="" />
     </>
   )
 

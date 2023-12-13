@@ -1,0 +1,6 @@
+#accordion-bg {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  z-index: -1;
+}
