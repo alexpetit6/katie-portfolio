@@ -1,5 +1,11 @@
+#album-bg {
+  background-image: url('../../../public/images/katie-choreo.jpg');
+  background-size: cover;
+}
+
 .album {
   min-height: 100vh;
+  background-color: #ff6fbcA8
 }
 
 .album-thumbnails-container {

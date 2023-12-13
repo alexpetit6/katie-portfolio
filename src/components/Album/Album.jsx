@@ -21,18 +21,21 @@ export default function Album({title, currentRef, setter, closed, page, user}) {
   const AlbumThumbnails = albums.map(a => <AlbumThumbnail album={a} key={a.id} setAlbums={setAlbums} user={user} />)
 
   return(
-    <div className="album">
-      <Header 
-        title={title} 
-        currentRef={currentRef} 
-        setter={setter} 
-        closed={closed} 
-        page={page} 
-      />
-      <OpenAlbumForm user={user} />
-      <div className="double-line"><Line /><Line /></div>
-      <div className="album-thumbnails-container">
-        {AlbumThumbnails}
+    <div id="album-bg">
+      {/* If performance gallery gets implemented background img and color will need to be set dynamically */}
+      <div className="album">
+        <Header 
+          title={title} 
+          currentRef={currentRef} 
+          setter={setter} 
+          closed={closed} 
+          page={page} 
+        />
+        <OpenAlbumForm user={user} />
+        <div className="double-line"><Line /><Line /></div>
+        <div className="album-thumbnails-container">
+          {AlbumThumbnails}
+        </div>
       </div>
     </div>
 

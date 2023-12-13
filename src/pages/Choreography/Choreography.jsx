@@ -5,10 +5,12 @@ import Line from '../../components/Line/Line';
 
 export default function Choreography({currentRef, setter, closed}) {
   return (
-    <div id="choreography">
-      <Header title='Choreography' currentRef={currentRef} setter={setter} closed={closed} page='choreo' />
-      <div className="double-line"><Line /><Line /></div>
-      <Albums />
+    <div id="choreo-bg">
+      <div id="choreo">
+        <Header title='Choreography' currentRef={currentRef} setter={setter} closed={closed} page='choreo' />
+        <div className="double-line"><Line /><Line /></div>
+        <Albums />
+      </div>
     </div>
   )
 }

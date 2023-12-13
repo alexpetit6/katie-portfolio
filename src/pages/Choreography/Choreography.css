@@ -1,5 +1,10 @@
-#choreography {
-  background-color: #A94B7E;
+#choreo-bg {
+  background-image: url('../../../public/images/katie-choreo.jpg');
+  background-size: cover;
+}
+
+#choreo {
+  background-color: red;
   min-height: 100vh;
 }
 
