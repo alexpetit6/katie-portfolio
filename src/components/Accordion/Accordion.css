@@ -98,6 +98,7 @@
 
 #about-tab > .tab-title > h1 {
   grid-column-start: 1;
+  margin-left: 5px;
 }
 
 #choreographer-tab > .tab-title > h1 {
@@ -118,12 +119,12 @@
 
 #contact-tab > .tab-title > h1 {
   grid-column-start: 5;
+  margin-right: 40px;
 }
 
-/* .performance-fancybox {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  width: 100%;
+@media (max-width: 576px) {
+  #contact-tab > .tab-title > h1 {
+    margin-right: 5px;
+  }
+  
 }
-
-.performance-fancybox  */

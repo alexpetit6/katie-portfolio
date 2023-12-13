@@ -1,4 +1,5 @@
 #landing-bg {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +18,7 @@
 
 #landing-title {
   text-align: center;
-  margin: 10% 0 0 0;
+  margin: 8% 0 0 0;
   font-size: calc(3em + 5vw);
   color: white;
 }
@@ -31,6 +32,15 @@
   margin: 10px;
   font-size: calc(1em + 2vw);
   color: white;
+}
+
+#landing-bg > i {
+  position: absolute;
+  text-shadow: 5px -2px 2px black;
+  bottom: 0;
+  font-size: calc(4em + 4vw);
+  color: white;
+  rotate: 180deg;
 }
 
 @media (max-width: 1024px) {
