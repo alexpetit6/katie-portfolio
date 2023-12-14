@@ -1,11 +1,23 @@
 #album-bg {
-  background-image: url('../../../public/images/katie-choreo.jpg');
-  background-size: cover;
+  position: relative;
+  display: grid;
+  clip-path: inset(0%);
+  grid-template-columns: 1fr; /* Single column layout */
+}
+
+#album-bg-img {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* z-index: -1; Move the image to the background */
 }
 
 .album {
+  position: relative;
   min-height: 100vh;
-  background-color: #ff6fbcA8
+  background-color: #ff6fbcA8;
 }
 
 .album-thumbnails-container {

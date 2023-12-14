@@ -2,7 +2,7 @@ import './NewAlbumForm.css';
 import React, { useState, useRef } from 'react';
 import { create } from '../../utilities/albums-api';
 
-export default function NewAlbumForm({category, hidden, setOpen}) {
+export default function NewAlbumForm({category, hidden, setOpen, setAlbums}) {
   // const { albumId } = useParams();
 
   const baseData = {
@@ -41,10 +41,11 @@ export default function NewAlbumForm({category, hidden, setOpen}) {
     for (let i = 0; i < photosRef.current.files.length; i++) {
       newFormData.append('photos', photosRef.current.files[i]);
     };
-    await create(newFormData);
+    const albums = await create(newFormData);
     thumbnailRef.current.value = '';
     photosRef.current.value = '';
     setFormData(baseData);
+    setAlbums(albums);
     setLoading(false);
   }
 

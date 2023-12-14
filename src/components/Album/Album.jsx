@@ -23,6 +23,7 @@ export default function Album({title, currentRef, setter, closed, page, user}) {
   return(
     <div id="album-bg">
       {/* If performance gallery gets implemented background img and color will need to be set dynamically */}
+      <img id='album-bg-img' src="/katie-choreo.jpg" alt="" />
       <div className="album">
         <Header 
           title={title} 
@@ -31,7 +32,7 @@ export default function Album({title, currentRef, setter, closed, page, user}) {
           closed={closed} 
           page={page} 
         />
-        <OpenAlbumForm user={user} />
+        <OpenAlbumForm user={user} setAlbums={setAlbums}/>
         <div className="double-line"><Line /><Line /></div>
         <div className="album-thumbnails-container">
           {AlbumThumbnails}

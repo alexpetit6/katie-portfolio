@@ -18,6 +18,8 @@
 }
 
 .closed-tab {
+  position: relative;
+  z-index: 1;
   overflow: hidden;
   height: 20vh;
   width: 100vw;
@@ -27,7 +29,7 @@
 }
 
 .closed-tab:hover {
-  position: relative;
+  z-index: 2;
   margin: -2vh 0;
   height: 24vh;
   width: 102vw;
@@ -48,8 +50,8 @@
 }
 
 .open-tab {
-  position: relative;
-  z-index: 1;
+  /* position: relative;
+  z-index: 1; */
 }
 
 .open-tab > .tab-title {

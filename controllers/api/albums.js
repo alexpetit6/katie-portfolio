@@ -33,14 +33,14 @@ async function create(req, res) {
     const photoURLs = await Promise.all(req.files['photos'].map(async (p) => {
       return await uploadFile(p);
     }));
-    const album = await Album.create({
+    await Album.create({
       title: req.body.title,
       category: req.body.category,
       thumbnail: thumbnailURL,
       photos: photoURLs,
-
     });
-    res.json(album);
+    const albums = await Album.find({}).sort('date').exec();
+    res.json(albums);
   } catch (err) {
     console.log(err)
   }
