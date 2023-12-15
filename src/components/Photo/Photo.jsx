@@ -20,7 +20,7 @@ export default function Photo({ img, album, setAlbum, performance, setPerformanc
     <div className='photo-thumbnail'>
       <div className='photo-thumbnail-img'>
         <button onClick={handleDelete} className='delete-photo-btn danger'>DELETE</button>
-        <img src={img} data-fancybox alt="" />
+        <img src={img} data-fancybox='choreo' alt="" />
       </div>
       <Line />
     </div>

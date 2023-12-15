@@ -62,14 +62,14 @@ export default function EditAlbum({ user }) {
           <button type='submit' className='submit-album-update-btn success' disabled={isLoading}>{isLoading ? 'Submitting...' : 'Submit Changes'}</button>
           <div className='add-photos'>
             <label htmlFor="add-photos-input">Add More Photos:</label>
-            <input ref={photosRef} id='add-photos-input' type="file" multiple />
+            <input ref={photosRef} id='add-photos-input' type="file" accept='jpg, jpeg' multiple />
           </div>
           <div className='edit-thumbnail'>
             <div className='edit-thumbnail-img'>
               <img src={album.thumbnail} />
             </div>
             <label htmlFor="edit-thumbnail-input">Change Thumbnail:</label>
-            <input id='edit-thumbnail-input' type="file" ref={thumbnailRef} />
+            <input id='edit-thumbnail-input' type="file" accept='jpg, jpeg' ref={thumbnailRef} />
           </div>
         </form>
         <div className="triple-line"><Line/></div>

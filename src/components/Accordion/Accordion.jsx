@@ -1,5 +1,5 @@
 import './Accordion.css';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import About from '../../pages/About/About';
 import Album from '../Album/Album';
@@ -16,6 +16,13 @@ export default function Accordion({user}) {
     resume: 'closed-tab',
     contact: 'closed-tab',
   });
+
+  // useEffect(() => {
+  //   setClosed({
+  //     ...closed,
+  //     choreo: 'open-tab'
+  //   });
+  // }, []);
 
   const aboutRef = useRef(null);
   const choreoRef = useRef(null);

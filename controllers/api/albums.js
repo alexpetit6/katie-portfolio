@@ -1,3 +1,4 @@
+const resize = require('../../config/resize-img');
 const uploadFile = require('../../config/upload-file');
 const Album = require('../../models/album');
 
@@ -29,6 +30,11 @@ async function create(req, res) {
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     };
+    const thumbnailresize = await resize(
+      req.files['thumbnail'][0].buffer, 
+      req.files['thumbnail'][0].originalname
+    );
+    req.files['thumbnail'][0].buffer = thumbnailresize;
     const thumbnailURL = await uploadFile(req.files['thumbnail'][0]);
     const photoURLs = await Promise.all(req.files['photos'].map(async (p) => {
       return await uploadFile(p);

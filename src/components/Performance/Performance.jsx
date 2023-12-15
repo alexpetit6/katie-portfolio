@@ -22,7 +22,7 @@ export default function Performance() {
   }, []);
 
   if (performance) {
-    const Photos = performance.photos?.map((p) => <img data-fancybox='performance' src={p} />)
+    const Photos = performance.photos?.map((p) => <img data-fancybox='performance' key={p} src={p} />)
   
     return (
       <div id='performance'>

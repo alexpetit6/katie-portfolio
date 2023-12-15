@@ -22,7 +22,7 @@ export default function EditResumePDF({handleClick, setResume, type}) {
     <div className="edit-resume">
       <form onSubmit={handleSubmit} className='edit-resume-form'>
         <label htmlFor="pdf-input">Change PDF:</label>
-        <input ref={pdfRef} id='pdf-input' type="file" />
+        <input ref={pdfRef} id='pdf-input' type="file" accept='.pdf'/>
         <button type='submit' className='submit-resume-btn success' disabled={isLoading}>{isLoading ? 'Uploading...' : 'Upload PDF'}</button>
       </form>
       <button onClick={() => handleClick(type)} className='stop-edit-resume-btn warning'>CANCEL</button>

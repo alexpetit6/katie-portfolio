@@ -18,7 +18,7 @@ export default function Album({title, currentRef, setter, closed, page, user}) {
     getAllAlbums();
   }, [])
 
-  const AlbumThumbnails = albums.map(a => <AlbumThumbnail album={a} key={a.id} setAlbums={setAlbums} user={user} />)
+  const AlbumThumbnails = albums.map(a => <AlbumThumbnail album={a} key={a._id} setAlbums={setAlbums} user={user} />)
 
   return(
     <div id="album-bg">

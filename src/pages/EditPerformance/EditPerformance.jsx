@@ -46,7 +46,7 @@ export default function EditPerformance() {
           <form onSubmit={handleSubmit} id='performance-form'>
             <div id='add-performance-photos'>
               <label htmlFor="performance-photos-input">Add More Photos:</label>
-              <input ref={photosRef} id='performance-photos-input' type="file" multiple />
+              <input ref={photosRef} id='performance-photos-input' type="file" accept='jpg, jpeg' multiple />
             </div>
             <button type='submit' className='submit-performance-btn success' disabled={isLoading}>{isLoading ? 'Uploading Photos...' : 'Upload Photos'}</button>
           </form>

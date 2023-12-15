@@ -15,7 +15,7 @@ export default function AlbumThumbnail({album, setAlbums, user}) {
     };
   }
 
-  const Photos = album.photos.map((p) => <Photo img={p} />);
+  const Photos = album.photos.map((p) => <img key={p} src={p} data-fancybox={album._id} />);
 
   return (
     hidden
@@ -26,7 +26,7 @@ export default function AlbumThumbnail({album, setAlbums, user}) {
       ?
       <>
       <Link className='edit-album-btn' to={`/album/${album._id}`}>
-        <button className='admin-button warning'>Edit Album</button>
+        {/* <button className='admin-button warning'>Edit Album</button> */}
       </Link>
       <button onClick={handleClick} className='delete-album-btn admin-button danger'>DELETE</button>
       </>
@@ -35,7 +35,7 @@ export default function AlbumThumbnail({album, setAlbums, user}) {
       }
       <h1>{album.title}</h1>
           <Fancybox newClass='fancybox-thumbnail'>
-            <img data-fancybox src={album.thumbnail} alt="" />
+            <img data-fancybox-trigger={album._id} src={album.thumbnail} alt="" />
             {Photos}
           </Fancybox>
       <Line />

@@ -8,7 +8,7 @@ module.exports = async function(file, pdf=false) {
     Bucket: S3_BUCKET,
     Key: `${Date.now()}-${file.originalname}`,
     Body: file.buffer,
-    ContentType: `application/${pdf ? 'pdf' : 'octet-stream'}`
+    ContentType: `application/${pdf ? 'pdf' : 'jpeg'}`
   };
   await s3Client.send(new PutObjectCommand(s3Params));
   console.log(s3Params.Key)
