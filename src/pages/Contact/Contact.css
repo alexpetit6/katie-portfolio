@@ -30,11 +30,11 @@
 #contact-form > *:not(button) {
   width: 100%;
   border: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #contact-form > input {
   font-size: 1.5em;
-
 }
 
 #contact-form > textarea {

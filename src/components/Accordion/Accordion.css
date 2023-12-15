@@ -49,11 +49,6 @@
   transition: all 1s
 }
 
-.open-tab {
-  /* position: relative;
-  z-index: 1; */
-}
-
 .open-tab > .tab-title {
   height: 0;
 }

@@ -40,6 +40,7 @@
   align-self: center;
   font-size: calc(1em + 4vw);
   transition: all 1s;
+  color: white;
 
 }
 
@@ -47,7 +48,7 @@
   position: relative;
   cursor: pointer;
   top: 10px;
-  text-shadow: 0 -6px 5px black;
+  text-shadow: -6px -6px 5px black;
 }
 
 #about-container > p {
