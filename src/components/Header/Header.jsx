@@ -1,6 +1,6 @@
 import './Header.css';
 
-export default function Header({title, page, currentRef, setter, closed}) {
+export default function Header({black, title, page, currentRef, setter, closed}) {
   function handleCollapse() {
     setter({
       ...closed,
@@ -22,7 +22,7 @@ export default function Header({title, page, currentRef, setter, closed}) {
 
   return (
     <>
-    <div className="page-header">
+    <div className={`page-header ${black ? 'black' : ''}`}>
       <h1>{title}</h1>
       <i className="fa-solid fa-chevron-up" onClick={handleCollapse}></i>
     </div>

@@ -15,7 +15,7 @@ export default function AlbumThumbnail({album, setAlbums, user}) {
     };
   }
 
-  const Photos = album.photos.map((p) => <img key={p} src={p} data-fancybox={album._id} />);
+  const Photos = album.photos.map((p) => <img key={p} src={p} data-fancybox={album._id} loading='lazy'/>);
 
   return (
     hidden

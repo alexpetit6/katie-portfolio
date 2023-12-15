@@ -8,6 +8,10 @@
   /* margin-bottom: 20px; */
   font-size: calc(1em + 4vw);
   font-family: 'Alfa Slab One', serif;
+  color: white;
+}
+
+.page-header.black {
   color: black;
 }
 

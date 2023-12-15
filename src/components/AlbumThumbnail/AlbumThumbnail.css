@@ -21,6 +21,7 @@
 }
 
 .album-thumbnail > h1 {
+  color: white;
   font-size: calc(1em + 1.2vw);
   font-family: 'Tenor Sans', sans-serif;
 }
