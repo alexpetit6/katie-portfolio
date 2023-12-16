@@ -30,10 +30,7 @@ async function create(req, res) {
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     };
-    const thumbnailresize = await resize(
-      req.files['thumbnail'][0].buffer, 
-      req.files['thumbnail'][0].originalname
-    );
+    const thumbnailresize = await resize(req.files['thumbnail'][0].buffer);
     req.files['thumbnail'][0].buffer = thumbnailresize;
     const thumbnailURL = await uploadFile(req.files['thumbnail'][0]);
     const photoURLs = await Promise.all(req.files['photos'].map(async (p) => {
@@ -44,6 +41,8 @@ async function create(req, res) {
       category: req.body.category,
       thumbnail: thumbnailURL,
       photos: photoURLs,
+      role: req.body.role,
+      theater: req.body.theater
     });
     const albums = await Album.find({}).sort('date').exec();
     res.json(albums);

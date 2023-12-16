@@ -34,7 +34,7 @@
 
 #album-form {
   display: grid;
-  grid-template: repeat(4, 1fr) / 1fr 1fr;
+  grid-template: repeat(6, 1fr) / 1fr 1fr;
   height: 70%;
   width: 80%;
   align-items: center;
@@ -52,9 +52,13 @@
   color: white;
 }
 
-#album-form > input:not(#title-input) {
+#album-form > input:not(.text-input) {
   color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#theater-input {
+  color: black;
 }
 
 #album-submit-button {

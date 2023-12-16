@@ -7,7 +7,9 @@ export default function NewAlbumForm({category, hidden, setOpen, setAlbums}) {
 
   const baseData = {
     title: '',
-    category: 'choreography'
+    category: 'choreography',
+    role: 'Choreographer',
+    theater: ''
   };
 
   const [formData, setFormData] = useState(baseData);
@@ -38,6 +40,7 @@ export default function NewAlbumForm({category, hidden, setOpen, setAlbums}) {
       newFormData.append(key, value);
     };
     newFormData.append('thumbnail', thumbnailRef.current.files[0]);
+    // append thumbnail again to avoid compressing it in the backend
     newFormData.append('photos', thumbnailRef.current.files[0]);
     for (let i = 0; i < photosRef.current.files.length; i++) {
       newFormData.append('photos', photosRef.current.files[i]);
@@ -55,7 +58,14 @@ export default function NewAlbumForm({category, hidden, setOpen, setAlbums}) {
       <button onClick={handleClose} id='close-album-form-btn'>X</button>
       <div id='new-album-container'>
         <form id='album-form' onSubmit={handleSubmit}>
-          <input id='title-input' name='title' type="text" placeholder='Enter Title' onChange={handleChange} value={formData.title} />
+          <input id='title-input' className='text-input' name='title' type="text" placeholder='Enter Title' onChange={handleChange} value={formData.title} />
+          <label htmlFor='role-select'>Select Role:</label>
+          <select onChange={handleChange} name='role' id='cars'>
+            <option value="Choreographer">Choreographer</option>
+            <option value="Director">Director</option>
+          </select>
+          <label htmlFor="theater-input" >Enter Theater:</label>
+          <input name='theater' type="text" id="theater-input" className='text-input' placeholder='Theater' onChange={handleChange} value={formData.theater} />
           <label htmlFor="thumbnail">Thumbnail Image:</label>
           <input ref={thumbnailRef} id='thumbnail' name='thumbnail' type="file" accept='.jpg, .jpeg' placeholder='Title'/>
           <label htmlFor="photos">Select Photos:</label>
