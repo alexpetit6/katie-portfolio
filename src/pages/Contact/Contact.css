@@ -1,6 +1,7 @@
 #contact-bg {
   background-image: url('../../../public/images/katie-contact2.jpg');
   background-size: cover;
+  background-position: 85%;
 }
 
 #contact {

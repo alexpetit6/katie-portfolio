@@ -34,10 +34,11 @@ export default function AlbumThumbnail({album, setAlbums, user}) {
       null
       }
       <h1>{album.title}</h1>
-          <Fancybox newClass='fancybox-thumbnail'>
-            <img data-fancybox-trigger={album._id} src={album.thumbnail} alt="" />
-            {Photos}
-          </Fancybox>
+      <Fancybox newClass='fancybox-thumbnail'>
+        <img data-fancybox-trigger={album._id} src={album.thumbnail} alt="" />
+        {Photos}
+      </Fancybox>
+      <h3 className='album-subtitles'>{album.role}, {album.theater}</h3>
       <Line />
     </div>
     :

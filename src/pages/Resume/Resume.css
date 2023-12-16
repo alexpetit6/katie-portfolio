@@ -1,6 +1,7 @@
 #resume-bg {
   background-image: url('../../../public/images/katie-resume.jpg');
   background-size: cover;
+  background-position: 70% 50%;
 }
 
 #resume {

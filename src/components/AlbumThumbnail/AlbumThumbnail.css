@@ -39,10 +39,16 @@
 }
 
 .fancybox-thumbnail > img {
-  height: 20vw;
-  width: 30vw;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.album-subtitles {
+  font-size: calc(1em + 0.5vw);
+  font-family: 'Gelasio', serif;
+  color: white;
 }
 
 .album-thumbnail > .line {
@@ -77,8 +83,6 @@
   }
   
   .fancybox-thumbnail > img {
-    height: 80vw;
-    width: 80vw;
     object-fit: cover;
     object-position: center;
   }
