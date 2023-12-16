@@ -7,7 +7,7 @@ export default function Main({user}) {
 
   return (
     <>
-    <ContactBar />
+    {/* <ContactBar /> */}
     <Landing />
     <Accordion user={user} />
     <img id='accordion-bg' src="/accordion-bg.jpg" alt="" />

@@ -17,7 +17,15 @@ const albumSchema = new Schema({
   category: {
     type: String,
     required: true
-  }
+  },
+  role: {
+    type: String,
+    default: 'Choreographer'
+  },
+  theater: {
+    type: String,
+    required: true
+  },
 });
 
 

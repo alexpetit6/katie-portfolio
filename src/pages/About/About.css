@@ -21,7 +21,7 @@
   left: 4vw;
   top: 5vh;
   font-size: calc(1em + 5vw);
-  font-family: 'Alfa Slab One', serif;
+  font-family: 'Kalnia', serif;
   color: white;
 }
 
@@ -59,7 +59,7 @@
   left: 5vw;
   width: 25vw;
   font-size: calc(1em + 0.3vw);
-  font-family: 'Solway', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 @media (max-width: 1024px) {

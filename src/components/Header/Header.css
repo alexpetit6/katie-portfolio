@@ -5,9 +5,8 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
-  /* margin-bottom: 20px; */
   font-size: calc(1em + 5.3vw);
-  font-family: 'Alfa Slab One', serif;
+  font-family: 'Yeseva One', serif;
   color: white;
 }
 
