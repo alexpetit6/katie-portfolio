@@ -53,17 +53,22 @@ async function create(req, res) {
 
 async function update(req, res) {
   try {
+    console.log('update')
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     };
     const updatedAlbum = await Album.findOneAndUpdate(
       {_id: req.params.id},
-      {title: req.body.title},
+      req.body,
       {new: true}
     );
     if (req.files['thumbnail']) {
+      const highResThumbnailURL = await uploadFile(req.files['thumbnail'][0])
+      const thumbnailresize = await resize(req.files['thumbnail'][0].buffer);
+      req.files['thumbnail'][0].buffer = thumbnailresize;
       const thumbnailURL = await uploadFile(req.files['thumbnail'][0]);
       updatedAlbum.thumbnail = thumbnailURL;
+      updatedAlbum.photos.splice(0, 1, highResThumbnailURL);
     };
     if (req.files['photos']) {
       const newPhotoURLs = await Promise.all(req.files['photos'].map(async (p) => {

@@ -46,14 +46,16 @@ export default function EditAlbum({ user }) {
     for (const [key, value] of Object.entries(formData)) {
       newFormData.append(key, value);
     };
-    if (thumbnailRef.current) newFormData.append('thumbnail', thumbnailRef.current.files[0]);
-    if (photosRef.current) {
+    if (thumbnailRef.current.value) newFormData.append('thumbnail', thumbnailRef.current.files[0]);
+    if (photosRef.current.value) {
       for (let i = 0; i < photosRef.current.files.length; i++) {
         newFormData.append('photos', photosRef.current.files[i]);
       };
     };
     const updatedAlbum = await update(album._id, newFormData);
     setAlbum(updatedAlbum);
+    thumbnailRef.current.value = null
+    photosRef.current.value = null
     setLoading(false);
   }
   
@@ -66,7 +68,7 @@ export default function EditAlbum({ user }) {
           <button className='cancel-edit-album-btn warning'>CANCEL</button>
         </Link>
         <form onSubmit={handleSubmit} className='edit-album-form'>
-          <input id='edit-title-input' onChange={handleChange} type="text" value={formData.title} />
+          <input name='title' id='edit-title-input' onChange={handleChange} type="text" value={formData.title} />
           <button type='submit' className='submit-album-update-btn success' disabled={isLoading}>{isLoading ? 'Submitting...' : 'Submit Changes'}</button>
           <div className='edit-subtitles'>
             <label htmlFor="edit-role">Change Role:</label>
