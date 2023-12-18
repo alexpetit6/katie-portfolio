@@ -26,7 +26,7 @@ export default function AlbumThumbnail({album, setAlbums, user}) {
       ?
       <>
       <Link className='edit-album-btn' to={`/album/${album._id}`}>
-        {/* <button className='admin-button warning'>Edit Album</button> */}
+        <button className='admin-button warning'>Edit Album</button>
       </Link>
       <button onClick={handleClick} className='delete-album-btn admin-button danger'>DELETE</button>
       </>

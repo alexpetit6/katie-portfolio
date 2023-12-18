@@ -10,7 +10,7 @@ import Photo from '../../components/Photo/Photo';
 
 export default function EditAlbum({ user }) {
   const [album, setAlbum] = useState();
-  const [title, setTitle] = useState('');
+  const [formData, setFormData] = useState({});
   const [isLoading, setLoading] = useState(false);
 
   const { albumId } = useParams();
@@ -22,13 +22,20 @@ export default function EditAlbum({ user }) {
     async function getAlbum() {
       const a = await albumDetail(albumId);
       setAlbum(a);
-      setTitle(a.title);
+      setFormData({
+        title: a.title,
+        role: a.role,
+        theater: a.theater
+      });
     }
     getAlbum();
   }, []);
 
   function handleChange(evt) {
-    setTitle(evt.target.value)
+    setFormData({
+      ...formData,
+      [evt.target.name]: evt.target.value
+    });
   }
 
   
@@ -36,7 +43,9 @@ export default function EditAlbum({ user }) {
     evt.preventDefault();
     setLoading(true);
     const newFormData = new FormData();
-    newFormData.append('title', title);
+    for (const [key, value] of Object.entries(formData)) {
+      newFormData.append(key, value);
+    };
     if (thumbnailRef.current) newFormData.append('thumbnail', thumbnailRef.current.files[0]);
     if (photosRef.current) {
       for (let i = 0; i < photosRef.current.files.length; i++) {
@@ -45,7 +54,6 @@ export default function EditAlbum({ user }) {
     };
     const updatedAlbum = await update(album._id, newFormData);
     setAlbum(updatedAlbum);
-    setTitle(updatedAlbum.title);
     setLoading(false);
   }
   
@@ -58,11 +66,16 @@ export default function EditAlbum({ user }) {
           <button className='cancel-edit-album-btn warning'>CANCEL</button>
         </Link>
         <form onSubmit={handleSubmit} className='edit-album-form'>
-          <input id='edit-title-input' onChange={handleChange} type="text" value={title} />
+          <input id='edit-title-input' onChange={handleChange} type="text" value={formData.title} />
           <button type='submit' className='submit-album-update-btn success' disabled={isLoading}>{isLoading ? 'Submitting...' : 'Submit Changes'}</button>
-          <div className='add-photos'>
-            <label htmlFor="add-photos-input">Add More Photos:</label>
-            <input ref={photosRef} id='add-photos-input' type="file" accept='jpg, jpeg' multiple />
+          <div className='edit-subtitles'>
+            <label htmlFor="edit-role">Change Role:</label>
+            <select defaultValue={album.role} onChange={handleChange} name='role' id='role-select'>
+              <option value="Choreographer">Choreographer</option>
+              <option value="Director">Director</option>
+            </select>
+            <label htmlFor="edit-theater">Change Theater:</label>
+            <input name='theater' type="text" id='edit-theater' onChange={handleChange} value={formData.theater} />
           </div>
           <div className='edit-thumbnail'>
             <div className='edit-thumbnail-img'>
@@ -70,6 +83,10 @@ export default function EditAlbum({ user }) {
             </div>
             <label htmlFor="edit-thumbnail-input">Change Thumbnail:</label>
             <input id='edit-thumbnail-input' type="file" accept='jpg, jpeg' ref={thumbnailRef} />
+          </div>
+          <div className='add-photos'>
+            <label htmlFor="add-photos-input">Add More Photos:</label>
+            <input ref={photosRef} id='add-photos-input' type="file" accept='jpg, jpeg' multiple />
           </div>
         </form>
         <div className="triple-line"><Line/></div>

@@ -29,9 +29,20 @@
   font-size: 1em;
 }
 
+.edit-subtitles {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.edit-subtitles > * {
+  margin: 5px;
+}
+
 .add-photos {
-  position: relative;
-  left: 40px;
+  /* position: relative;
+  left: 40px; */
   display: flex;
   justify-content: center;
   width: 150%;

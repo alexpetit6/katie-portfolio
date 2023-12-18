@@ -8,7 +8,7 @@ import EditAlbum from '../EditAlbum/EditAlbum';
 import EditPerformance from '../EditPerformance/EditPerformance';
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(getUser());
 
 
 

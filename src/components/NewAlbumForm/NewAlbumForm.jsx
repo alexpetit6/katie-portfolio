@@ -60,7 +60,7 @@ export default function NewAlbumForm({category, hidden, setOpen, setAlbums}) {
         <form id='album-form' onSubmit={handleSubmit}>
           <input id='title-input' className='text-input' name='title' type="text" placeholder='Enter Title' onChange={handleChange} value={formData.title} />
           <label htmlFor='role-select'>Select Role:</label>
-          <select onChange={handleChange} name='role' id='cars'>
+          <select onChange={handleChange} name='role' id='role-select'>
             <option value="Choreographer">Choreographer</option>
             <option value="Director">Director</option>
           </select>
