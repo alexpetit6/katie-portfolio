@@ -11,19 +11,23 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports = async function sendMail(name, email, subject, msg) {
-  const info = await transporter.sendMail({
-    from: 'from.katies.portfolio@gmail.com', 
-    to: "alexpetit6@gmail.com", 
-    subject: subject, 
-    html: 
-      `
-      <p>
-        Reply to: <strong>${name} @ ${email}</strong>
-        <div style="margin-bottom: 20px;"></div>
-        ${msg}
-      </p>
-      `,
-  });
-
-  console.log("Message sent: %s", info.messageId);
+  try {
+    const info = await transporter.sendMail({
+      from: process.env.SENDER_ADDRESS, 
+      to: process.env.TO_ADDRESS, 
+      subject: subject, 
+      html: 
+        `
+        <p>
+          Reply to: <strong>${name} @ ${email}</strong>
+          <div style="margin-bottom: 20px;"></div>
+          ${msg}
+        </p>
+        `,
+    });
+    console.log("Message sent: %s", info.messageId);
+    return true
+  } catch (error) {
+    
+  }
 }

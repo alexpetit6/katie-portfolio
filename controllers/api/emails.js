@@ -7,9 +7,8 @@ module.exports = {
 async function send(req, res) {
   try {
     const {name, email, subject, msg} = req.body;
-    await sendMail(name, email, subject, msg);
-    console.log(req.body);
-    // await sendMail();
+    const success = await sendMail(name, email, subject, msg);
+    res.json(success);
   }
   catch (err) {
     console.log(err);
