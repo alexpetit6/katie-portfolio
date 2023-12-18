@@ -1,7 +1,6 @@
 import './Main.css';
 import { getUser, logOut } from '../../utilities/users-service';
 import Landing from '../../components/Landing/Landing';
-import ContactBar from '../../components/ContactBar/ContactBar';
 import Accordion from '../../components/Accordion/Accordion';
 
 export default function Main({user, setUser}) {

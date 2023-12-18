@@ -16,7 +16,12 @@ export default function Landing () {
 
   return (
     <div ref={landingRef} id='landing-bg'>
-      <h1 id='landing-title'>Katie Newbury</h1>
+      <div id='title-container'>
+        <h1 id='landing-title'>Katie Newbury</h1>
+        <a id='insta-link' href="https://www.instagram.com/katie_newbury/" target='_blank' rel='noreferrer'>
+          <i id='insta-icon' class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
       <Line />
       <h3 id='landing-subtitle'>Choreographer ● Actor ● Artist</h3>
       <i onClick={scroll} className="fa-solid fa-chevron-up"></i>

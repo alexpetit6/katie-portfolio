@@ -16,13 +16,35 @@
   top: -10%;
 } */
 
+#title-container {
+  position: relative;
+  width: 100%;
+  margin-top: 8%;
+}
+
 #landing-title {
   text-align: center;
-  margin: 8% 0 0 0;
+  /* margin: 8% 0 0 0; */
   font-size: calc(3em + 5vw);
   font-family: 'Kalnia', serif;
   font-weight: 600;
   color: white;
+}
+
+#insta-link {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+}
+
+#insta-icon {
+  color: white;
+  font-size: 4vw;
+  transition: all 1s;
+}
+
+#insta-icon:hover {
+  font-size: 5vw;
 }
 
 #landing-bg > .line {
@@ -60,7 +82,8 @@
     text-shadow: 2px 2px 4px black;
   }
 
-  #landing-title {
+  #title-container {
+    position: static;
     margin: 60% 0 0 0;
   }
 
@@ -68,4 +91,16 @@
     width: 95vw;
     box-shadow: 2px 2px 4px black;
   }
+
+  #insta-link {
+    width: fit-content;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  #insta-icon {
+    font-size: 10vw;
+  }
+  
 }
