@@ -10,15 +10,13 @@ import EditPerformance from '../EditPerformance/EditPerformance';
 export default function App() {
   const [user, setUser] = useState(getUser());
 
-
-
   return (
     <main className="App">
           <>
             <Routes>
               {/* Route components in here */}
               <Route path ='/admin' element={<AuthPage setUser={setUser}  />} />
-              <Route path="/" element={<Main user={user} />} />
+              <Route path="/" element={<Main user={user} setUser={setUser} />} />
               <Route path='/album/:albumId' element={<EditAlbum user={user} />} />
               <Route path='/edit-performance' element={<EditPerformance user={user} />} />
             </Routes>
