@@ -7,7 +7,7 @@ import AlbumThumbnail from '../AlbumThumbnail/AlbumThumbnail';
 import OpenAlbumForm from '../OpenAlbumForm/OpenAlbumForm';
 
 
-export default function Album({title, currentRef, setter, closed, page, user}) {
+export default function Album({title, currentRef, setter, setDisabled, closed, page, user}) {
   const [albums, setAlbums] = useState([]);
 
   useEffect(function() {
@@ -28,7 +28,8 @@ export default function Album({title, currentRef, setter, closed, page, user}) {
         <Header 
           title={title} 
           currentRef={currentRef} 
-          setter={setter} 
+          setter={setter}
+          setDisabled={setDisabled} 
           closed={closed} 
           page={page} 
         />

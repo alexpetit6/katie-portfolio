@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Line from '../Line/Line';
 import Fancybox from '../FancyBox/FancyBox';
-import Photo from '../Photo/Photo';
 import DeleteAlbum from '../DeleteAlbum/DeleteAlbum';
 
 export default function AlbumThumbnail({album, setAlbums, user}) {

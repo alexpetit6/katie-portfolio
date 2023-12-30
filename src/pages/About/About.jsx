@@ -1,8 +1,9 @@
 import './About.css';
 
-export default function About({setter, closed, page, currentRef}) {
+export default function About({setter, closed, setDisabled, page, currentRef}) {
 
   function handleCollapse() {
+    setDisabled(true);
     setter({
       ...closed,
       [page]: 'closing-tab',
@@ -15,8 +16,9 @@ export default function About({setter, closed, page, currentRef}) {
         ...closed,
         [page]: 'closed-tab',
       });
-      currentRef.style.height = ''
-    }, 1500);
+      currentRef.style.height = '';
+      setDisabled(false);
+    }, 1200);
   }
 
   return (

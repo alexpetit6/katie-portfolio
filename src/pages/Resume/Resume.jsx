@@ -5,7 +5,7 @@ import Line from '../../components/Line/Line';
 import Header from '../../components/Header/Header';
 import EditResumePDF from '../../components/EditResumePDF/EditResumePDF';
 
-export default function Resume({setter, closed, currentRef, user}) {
+export default function Resume({setter, closed, setDisabled, currentRef, user}) {
   const [resume, setResume] = useState(null);
   const [isEditing, setEditing] = useState({
     choreo: false,
@@ -31,7 +31,7 @@ export default function Resume({setter, closed, currentRef, user}) {
     return (
       <div id="resume-bg">
         <div className='tab-page' id='resume'>
-          <Header black title='Resumes' page='resume' setter={setter} closed={closed} currentRef={currentRef} />
+          <Header black title='Resumes' page='resume' setter={setter} closed={closed} currentRef={currentRef} setDisabled={setDisabled} />
           <Line />
           <div id='resume-frame'>
             <div className="corner-border" id='corner-border-1'></div>

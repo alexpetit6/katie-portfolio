@@ -4,7 +4,7 @@ import { sendEmail } from '../../utilities/emails-api';
 import Header from '../../components/Header/Header';
 import Line from '../../components/Line/Line';
 
-export default function Contact({currentRef, setter, closed}) {
+export default function Contact({currentRef, setter, closed, setDisabled}) {
   const baseData = {
     name: '',
     email: '',
@@ -47,7 +47,7 @@ export default function Contact({currentRef, setter, closed}) {
   return (
     <div id="contact-bg">
       <div id="contact">
-        <Header title='Contact' page='contact' currentRef={currentRef} setter={setter} closed={closed} />
+        <Header title='Contact' page='contact' currentRef={currentRef} setter={setter} closed={closed} setDisabled={setDisabled} />
         <Line />
         <h3 id='contact-error-msg'>{errorMsg}</h3>
         <form onSubmit={handleSubmit} id='contact-form'>
