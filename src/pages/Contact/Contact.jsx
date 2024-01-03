@@ -14,7 +14,7 @@ export default function Contact({currentRef, setter, closed, setDisabled}) {
 
   const [formData, setFormData] = useState(baseData);
   const [isLoading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
   const emailRef = useRef(null);

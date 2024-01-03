@@ -10,6 +10,7 @@
 .user-btn {
   height: 6vw;
   padding: 0 50px;
+  background-color: white;
   color: black;
   font-size: calc(0.3em + 1vw);
   font-family: 'Montserrat', sans-serif;
