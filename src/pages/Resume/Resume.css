@@ -110,10 +110,13 @@
   transition: all 1s;
 }
 
-.view-pdf:hover {
-  cursor: pointer;
-  border-width: 5px;
+@media (hover: hover) and (pointer: fine) {
+  .view-pdf:hover {
+    cursor: pointer;
+    border-width: 5px;
+  }
 }
+
 @media (max-width: 1024px) {
   #resume-container {
     grid-template: 1fr 1fr / none 

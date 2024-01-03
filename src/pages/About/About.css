@@ -44,13 +44,6 @@
 
 }
 
-#about-container > i:hover {
-  position: relative;
-  cursor: pointer;
-  top: 10px;
-  text-shadow: -6px -6px 5px black;
-}
-
 #about-container > p {
   grid-column: 2;
   position: relative;
@@ -60,6 +53,15 @@
   width: 25vw;
   font-size: calc(1em + 0.3vw);
   font-family: 'Lato', sans-serif;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #about-container > i:hover {
+    position: relative;
+    cursor: pointer;
+    top: 10px;
+    text-shadow: -6px -6px 5px black;
+  }
 }
 
 @media (max-width: 1024px) {

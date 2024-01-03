@@ -27,10 +27,12 @@
   
 }
 
-.page-header > i:hover {
-  cursor: pointer;
-  top: 10px;
-  text-shadow: -6px -6px 5px black;
+@media (hover: hover) and (pointer: fine) {
+  .page-header > i:hover {
+    cursor: pointer;
+    top: 10px;
+    text-shadow: -6px -6px 5px black;
+  }
 }
 
 @media (max-width: 576px) {

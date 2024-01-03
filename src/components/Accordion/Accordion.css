@@ -28,27 +28,6 @@
   transition: all 1s ease;
 }
 
-.closed-tab:hover {
-  z-index: 2;
-  margin: -2vh 0;
-  height: 24vh;
-  width: 102vw;
-  box-shadow: 0 8px 4px black;
-  cursor: pointer;
-}
-
-.closed-tab:hover > .tab-title {
-  height: 24vh;
-  font-size: calc(1.5em + 4vw);
-  transition: all 1s
-}
-
-.closed-tab:hover > .performance-fancybox > .tab-title {
-  height: 24vh;
-  font-size: calc(1.5em + 4vw);
-  transition: all 1s
-}
-
 .open-tab > .tab-title {
   height: 0;
 }
@@ -129,6 +108,29 @@
 #contact-tab > .tab-title > h1 {
   grid-column-start: 5;
   margin-right: 40px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .closed-tab:hover {
+    z-index: 2;
+    margin: -2vh 0;
+    height: 24vh;
+    width: 102vw;
+    box-shadow: 0 8px 4px black;
+    cursor: pointer;
+  }
+
+  .closed-tab:hover > .tab-title {
+    height: 24vh;
+    font-size: calc(1.5em + 4vw);
+    transition: all 1s
+  }
+  
+  .closed-tab:hover > .performance-fancybox > .tab-title {
+    height: 24vh;
+    font-size: calc(1.5em + 4vw);
+    transition: all 1s
+  }
 }
 
 @media (max-width: 576px) {
