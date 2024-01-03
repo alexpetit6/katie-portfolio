@@ -43,9 +43,6 @@
   transition: all 1s;
 }
 
-#insta-icon:hover {
-  font-size: 5vw;
-}
 
 #landing-bg > .line {
   width: 70vw;
@@ -71,6 +68,10 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  #insta-icon:hover {
+    font-size: 5vw;
+  }
+  
   #landing-bg > i:hover {
     bottom: 10px;
     text-shadow: 8px -8px 2px black;
