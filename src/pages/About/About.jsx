@@ -27,13 +27,21 @@ export default function About({setter, closed, setDisabled, page, currentRef}) {
         <h1>About</h1>
         {/* <div id="about-right"> */}
           <i className="fa-solid fa-chevron-up" onClick={handleCollapse}></i>
+          <div id='about-statement'>
           <p>
-            Katie, an ardent enthusiast of musical theater, breathes life into the stage with an unwavering passion for the performing arts. 
-            Her love for musicals is a vibrant thread woven into the fabric of her identity, a sentiment that resonates in every step she takes 
-            on and off the stage. With an innate talent for choreography, Katie effortlessly transforms music into mesmerizing movement, creating 
-            captivating visual symphonies. Her proficiency in choreographing intricate routines is a testament to her dedication and creative flair, 
-            turning each performance into a dynamic and memorable spectacle. 
+          Katie Newbury is an emerging figure in the performing arts scene in the greater Seattle area. As a choreographer, performer, and director, she consistently seeks enriching experiences to further her lifelong education in theatre and dance. Katie's presence in the rehearsal room is marked by a contagious, bright energy and a let's-get-after-it attitude, setting her apart as a standout collaborator.
           </p>
+          <br />
+          <p>
+          Her commitment to excellence is reflected in her select creative team credits, including Urinetown, The PROM (Village Theatre KIDSTAGE), as well as Bring It On: The Musical (Auburn Avenue Theatre). Select performance credits include She Kills Monsters, Urinetown, The Laramie Project, and Theory of Relativity (Western Oregon University).
+          </p>
+          <br />
+          <p>
+          Katie Newbury proudly describes herself as a fat-bodied artist and is a fervent advocate for body diversity and plus-size representation on stage. Her passion for inclusivity extends beyond performance, as she consistently strives to be a voice for the plus-size community in the theatre. Katie is dedicated to demonstrating that individuals of all shapes and sizes are capable of outstanding work.
+
+          </p>
+
+          </div>
         {/* </div> */}
       </div>
     </div>
