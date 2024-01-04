@@ -75,13 +75,13 @@
     background-size: 120%;
   }
 
-  #about-container > p {
+  #about-statement {
     position: relative;
     top: 5vh;
     grid-column: span 2;
     justify-self: start;
     align-self: start;
     width: 90vw;
-    font-size: 2vmax;
+    font-size: 1.6vmax;
   }
 }
