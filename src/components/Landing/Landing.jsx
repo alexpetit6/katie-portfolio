@@ -19,7 +19,7 @@ export default function Landing () {
       <div id='title-container'>
         <h1 id='landing-title'>Katie Newbury</h1>
         <a id='insta-link' href="https://www.instagram.com/katie_newbury/" target='_blank' rel='noreferrer'>
-          <i id='insta-icon' class="fa-brands fa-instagram"></i>
+          <i id='insta-icon' className="fa-brands fa-instagram"></i>
         </a>
       </div>
       <Line />
