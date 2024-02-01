@@ -50,7 +50,7 @@
   justify-items: center;
   color: white;
   text-shadow: 3px 3px 2px black;
-  font-size: calc(1.5em + 3vw);
+  font-size: calc(1.3em + 3vw);
   font-family: 'Gelasio', serif;
   text-align: center;
   transition: all 1s;
@@ -84,7 +84,8 @@
 
 #choreographer-tab > .tab-title > h1 {
   grid-column-start: 2;
-  width: 150%;
+  margin: 0;
+  /* width: 200%; */
   /* text-align: right; */
 }
 
