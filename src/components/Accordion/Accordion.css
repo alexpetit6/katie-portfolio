@@ -84,6 +84,8 @@
 
 #choreographer-tab > .tab-title > h1 {
   grid-column-start: 2;
+  width: 150%;
+  /* text-align: right; */
 }
 
 .performance-fancybox > .tab-title > h1 {
