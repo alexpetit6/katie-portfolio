@@ -71,11 +71,8 @@ export default function EditAlbum({ user }) {
           <input name='title' id='edit-title-input' onChange={handleChange} type="text" value={formData.title} />
           <button type='submit' className='submit-album-update-btn success' disabled={isLoading}>{isLoading ? 'Submitting...' : 'Submit Changes'}</button>
           <div className='edit-subtitles'>
-            <label htmlFor="edit-role">Change Role:</label>
-            <select defaultValue={album.role} onChange={handleChange} name='role' id='role-select'>
-              <option value="Choreographer">Choreographer</option>
-              <option value="Director">Director</option>
-            </select>
+            <label htmlFor='role-input'>Select Role:</label>
+            <input name='role' type="text" id="role-input" className='text-input' placeholder='Role' onChange={handleChange} value={formData.role} />
             <label htmlFor="edit-theater">Change Theater:</label>
             <input name='theater' type="text" id='edit-theater' onChange={handleChange} value={formData.theater} />
           </div>

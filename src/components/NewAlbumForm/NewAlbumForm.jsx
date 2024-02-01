@@ -59,11 +59,8 @@ export default function NewAlbumForm({category, hidden, setOpen, setAlbums}) {
       <div id='new-album-container'>
         <form id='album-form' onSubmit={handleSubmit}>
           <input id='title-input' className='text-input' name='title' type="text" placeholder='Enter Title' onChange={handleChange} value={formData.title} />
-          <label htmlFor='role-select'>Select Role:</label>
-          <select onChange={handleChange} name='role' id='role-select'>
-            <option value="Choreographer">Choreographer</option>
-            <option value="Director">Director</option>
-          </select>
+          <label htmlFor='role-input'>Select Role:</label>
+          <input name='role' type="text" id="role-input" className='text-input' placeholder='Role' onChange={handleChange} value={formData.role} />
           <label htmlFor="theater-input" >Enter Theater:</label>
           <input name='theater' type="text" id="theater-input" className='text-input' placeholder='Theater' onChange={handleChange} value={formData.theater} />
           <label htmlFor="thumbnail">Thumbnail Image:</label>
