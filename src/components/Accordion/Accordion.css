@@ -117,13 +117,13 @@
 
   .closed-tab:hover > .tab-title {
     height: 24vh;
-    font-size: calc(1.5em + 4vw);
+    font-size: calc(1.3em + 4vw);
     transition: all 1s
   }
   
   .closed-tab:hover > .performance-fancybox > .tab-title {
     height: 24vh;
-    font-size: calc(1.5em + 4vw);
+    font-size: calc(1.3em + 4vw);
     transition: all 1s
   }
 }
