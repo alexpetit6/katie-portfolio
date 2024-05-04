@@ -52,6 +52,7 @@
   width: 32vw;
   font-size: calc(1em + 0.3vw);
   font-family: 'Lato', sans-serif;
+  white-space: pre-wrap;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -84,4 +85,5 @@
     width: 90vw;
     font-size: 1.6vmax;
   }
+
 }
