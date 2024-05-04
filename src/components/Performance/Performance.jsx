@@ -5,13 +5,6 @@ import { getPerformance } from '../../utilities/performance-api';
 export default function Performance() {
   const[performance, setPerformance] = useState();
 
-  useEffect(function() {
-    async function getPerf() {
-      const performance = getPerformance();
-      setPerformance(performance);
-    }
-    getPerf();
-  }, []);
 
   useEffect(function() {
     async function getPerf() {
