@@ -77,7 +77,7 @@ export default function Accordion({user}) {
     <div id='accordion'>
       <div ref={aboutRef} className={closed.about} id='about-tab'>
         <div onClick={ disabled ? null : () => handleExpand('about')} ref={aboutTitleRef} className="tab-title"><h1>About</h1></div>
-        <About currentRef={refs.about.current} setter={setClosed} setDisabled={setDisabled} closed={closed} page='about' />
+        <About currentRef={refs.about.current} setter={setClosed} setDisabled={setDisabled} closed={closed} page='about' user={user} />
       </div>
       <div ref={choreoRef} className={closed.choreo} id='choreographer-tab'>
         <div onClick={ disabled ? null : () => handleExpand('choreo')} ref={choreoTitleRef} className="tab-title"><h1>Choreography and More</h1></div>

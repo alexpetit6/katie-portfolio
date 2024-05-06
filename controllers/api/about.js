@@ -8,7 +8,6 @@ module.exports = {
 async function show(req, res) {
   try {
     const about = await About.findOne({});
-    console.log(about.text)
     res.json(about);
   }
   catch (err) {

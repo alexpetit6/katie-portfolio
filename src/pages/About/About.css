@@ -55,6 +55,22 @@
   white-space: pre-wrap;
 }
 
+#edit-about-btn {
+  position: absolute;
+  top: -50px;
+}
+
+#about-text-input {
+  font-size: calc(0.79em + 0.3vw);
+  font-family: 'Lato', sans-serif;
+  height: 80vh;
+  width: 100%;
+}
+
+#update-about-btn {
+  height: 5vh;
+}
+
 @media (hover: hover) and (pointer: fine) {
   #about-container > i:hover {
     position: relative;
@@ -77,7 +93,6 @@
   }
 
   #about-statement {
-    position: relative;
     top: 5vh;
     grid-column: span 2;
     justify-self: start;
