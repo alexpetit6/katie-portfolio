@@ -12,7 +12,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const albums = await Album.find({}).sort('date').exec();
+  const albums = await Album.find({}).sort('order').exec();
   res.json(albums);
 }
 
@@ -36,13 +36,15 @@ async function create(req, res) {
     const photoURLs = await Promise.all(req.files['photos'].map(async (p) => {
       return await uploadFile(p);
     }));
+    const albumsLength = await Album.find({}).sort('date').exec();
     await Album.create({
       title: req.body.title,
       category: req.body.category,
       thumbnail: thumbnailURL,
       photos: photoURLs,
       role: req.body.role,
-      theater: req.body.theater
+      theater: req.body.theater,
+      order: albumsLength.length,
     });
     const albums = await Album.find({}).sort('date').exec();
     res.json(albums);
@@ -85,8 +87,15 @@ async function update(req, res) {
 
 async function deleteAlbum(req, res) {
   try {
+    const prevAlbums = await Album.find({}).sort('date').exec();
+    const deletedAlbum = await Album.findById(req.params.id);
+    for (let i = 0; i < prevAlbums.length; i++) {
+      if (i <= deletedAlbum.order) continue;
+      prevAlbums[i].order = prevAlbums[i].order - 1;
+      await prevAlbums[i].save();
+    }
     await Album.deleteOne({_id: req.params.id});
-    const albums = await Album.find({}).sort('date').exec();
+    const albums = await Album.find({}).sort('order').exec();
     res.json(albums);
   } catch (err) {
     res.json(err);
