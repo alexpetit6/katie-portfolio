@@ -9,6 +9,7 @@ import OpenAlbumForm from '../OpenAlbumForm/OpenAlbumForm';
 
 export default function Album({title, currentRef, setter, setDisabled, closed, page, user}) {
   const [albums, setAlbums] = useState([]);
+  const [editOrder, setEditOrder] = useState(false);
 
   useEffect(function() {
     async function getAllAlbums() {
@@ -18,7 +19,11 @@ export default function Album({title, currentRef, setter, setDisabled, closed, p
     getAllAlbums();
   }, [])
 
-  const AlbumThumbnails = albums.map(a => <AlbumThumbnail album={a} key={a._id} setAlbums={setAlbums} user={user} />)
+  const AlbumThumbnails = albums.map(a => <AlbumThumbnail album={a} key={a._id} setAlbums={setAlbums} user={user} editOrder={editOrder} />)
+
+  function handleEditOrder() {
+    setEditOrder(!editOrder);
+  }
 
   return(
     <div id="album-bg">
@@ -33,6 +38,7 @@ export default function Album({title, currentRef, setter, setDisabled, closed, p
           closed={closed} 
           page={page} 
         />
+        <button className='admin-button warning' id='edit-order-btn' onClick={handleEditOrder}>EDIT ORDER</button>
         <OpenAlbumForm user={user} setAlbums={setAlbums}/>
         <div className="double-line"><Line /><Line /></div>
         <div className="album-thumbnails-container">

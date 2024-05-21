@@ -8,6 +8,14 @@
   height: 45vh;
 }
 
+.order-input {
+  position: absolute;
+  height: 20vh;
+  text-align: center;
+  font-size: 10vmax;
+  width: 8vw;
+}
+
 .edit-album-btn {
   position: absolute;
   top: 6.4vh;
