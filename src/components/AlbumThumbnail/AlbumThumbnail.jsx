@@ -1,13 +1,29 @@
 import './AlbumThumbnail.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { updateOrder } from '../../utilities/albums-api';
 import Line from '../Line/Line';
 import Fancybox from '../FancyBox/FancyBox';
 import DeleteAlbum from '../DeleteAlbum/DeleteAlbum';
+import { update } from '../../utilities/about-api';
 
 export default function AlbumThumbnail({album, setAlbums, user, editOrder}) {
   const [hidden, setHidden] = useState(true);
   const [order, setOrder] = useState(album.order);
+  const [handle, setHandle] = useState(0);
+
+  useEffect(function() {
+    if (handle) {
+      async function changeOrder() {
+        if (order || order === 0) {
+          const prevOrder = album.order;
+          const albums = await updateOrder(album._id, { prevOrder: prevOrder, order: order });
+          setAlbums(albums);
+        }
+      }
+      changeOrder();
+    } else return;
+  }, [handle]);
 
   function handleClick() {
     if (user) {
@@ -15,10 +31,19 @@ export default function AlbumThumbnail({album, setAlbums, user, editOrder}) {
     };
   }
 
-  function handleOrder (evt) {
+  function handleOrder(evt) {
+    console.log('handling');
     setOrder(evt.target.value);
-    // if (evt.target.value) {
-
+    setHandle(handle + 1);
+    // if ( value || value === 0 ) {
+    //   console.log('value', value);
+    //   const prevOrder = album.order;
+    //   setOrder(value);
+    //   console.log('order', order)
+    //   const albums = await updateOrder(album._id, { prevOrder: prevOrder, order: order });
+    //   setAlbums(albums);
+    // } else {
+    //   setOrder(value);
     // }
   }
 

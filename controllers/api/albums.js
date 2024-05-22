@@ -6,6 +6,7 @@ module.exports = {
   index,
   show,
   create,
+  updateOrder,
   update,
   delete: deleteAlbum,
   deletePhoto
@@ -83,6 +84,16 @@ async function update(req, res) {
   } catch (err) {
     console.log(err);
   }
+}
+
+async function updateOrder(req, res) {
+  const prevOrder = req.body.prevOrder;
+  const order = req.body.order;
+  console.log(`prevOrder:${prevOrder} order:${order}`);
+  await Album.findOneAndUpdate({order: order}, {order: prevOrder});
+  await Album.findOneAndUpdate({id: req.params.id}, {order: order});
+  const albums = await Album.find({}).sort('order').exec();
+  res.json(albums);
 }
 
 async function deleteAlbum(req, res) {

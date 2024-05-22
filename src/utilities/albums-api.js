@@ -14,15 +14,21 @@ export async function create(formData) {
   return sendRequest(BASE_URL, 'POST', formData, true);
 }
 
+export async function deletePhoto(id, formData) {
+  return sendRequest(`${BASE_URL}/photo/${id}`, 'DELETE', formData);
+}
+
 export async function deleteAlbum(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
-export async function deletePhoto(id, formData) {
-  console.log('delete photo')
-  return sendRequest(`${BASE_URL}/photo/${id}`, 'DELETE', formData);
+export async function updateOrder(id, newData) {
+  console.log(newData);
+  return sendRequest(`${BASE_URL}/order/${id}`, 'PUT', newData);
 }
 
 export async function update(id, newData) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', newData, true);
 }
+
+
