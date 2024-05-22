@@ -87,11 +87,14 @@ async function update(req, res) {
 }
 
 async function updateOrder(req, res) {
-  const prevOrder = req.body.prevOrder;
-  const order = req.body.order;
-  console.log(`prevOrder:${prevOrder} order:${order}`);
-  await Album.findOneAndUpdate({order: order}, {order: prevOrder});
-  await Album.findOneAndUpdate({id: req.params.id}, {order: order});
+  const prevOrder = Number(req.body.prevOrder);
+  const order = Number(req.body.order);
+  const prevAlbum = await Album.findOne({order: order});
+  const thisAlbum = await Album.findById(req.params.id);
+  prevAlbum.order = prevOrder;
+  thisAlbum.order = order;
+  await prevAlbum.save();
+  await thisAlbum.save();
   const albums = await Album.find({}).sort('order').exec();
   res.json(albums);
 }

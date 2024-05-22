@@ -22,8 +22,13 @@ export default function AlbumThumbnail({album, setAlbums, user, editOrder}) {
         }
       }
       changeOrder();
-    } else return;
+    }
+
   }, [handle]);
+
+  useEffect(function() {
+    setOrder(album.order);
+  }, [album])
 
   function handleClick() {
     if (user) {
