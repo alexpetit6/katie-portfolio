@@ -5,30 +5,29 @@ import { updateOrder } from '../../utilities/albums-api';
 import Line from '../Line/Line';
 import Fancybox from '../FancyBox/FancyBox';
 import DeleteAlbum from '../DeleteAlbum/DeleteAlbum';
-import { update } from '../../utilities/about-api';
 
-export default function AlbumThumbnail({album, setAlbums, user, editOrder}) {
+export default function AlbumThumbnail({album, albums, setAlbums, user, editOrder}) {
   const [hidden, setHidden] = useState(true);
-  const [order, setOrder] = useState(album.order);
+  const [order, setOrder] = useState(album.order + 1);
   const [handle, setHandle] = useState(0);
 
   useEffect(function() {
     if (handle) {
       async function changeOrder() {
-        if (order || order === 0) {
+        const adjOrder = order - 1;
+        if (order) {
           const prevOrder = album.order;
-          const albums = await updateOrder(album._id, { prevOrder: prevOrder, order: order });
+          const albums = await updateOrder(album._id, { prevOrder: prevOrder, order: adjOrder });
           setAlbums(albums);
         }
       }
       changeOrder();
     }
-
   }, [handle]);
 
   useEffect(function() {
-    setOrder(album.order);
-  }, [album])
+    setOrder(album.order + 1);
+  }, [album]);
 
   function handleClick() {
     if (user) {
@@ -37,19 +36,10 @@ export default function AlbumThumbnail({album, setAlbums, user, editOrder}) {
   }
 
   function handleOrder(evt) {
-    console.log('handling');
-    setOrder(evt.target.value);
+    const value = evt.target.value;
+    if ((value < 1 && value !== '') || value > albums.length) setOrder('');
+    else setOrder(value);
     setHandle(handle + 1);
-    // if ( value || value === 0 ) {
-    //   console.log('value', value);
-    //   const prevOrder = album.order;
-    //   setOrder(value);
-    //   console.log('order', order)
-    //   const albums = await updateOrder(album._id, { prevOrder: prevOrder, order: order });
-    //   setAlbums(albums);
-    // } else {
-    //   setOrder(value);
-    // }
   }
 
   const Photos = album.photos.map((p) => <img key={p} src={p} data-fancybox={album._id} loading='lazy'/>);
@@ -65,7 +55,7 @@ export default function AlbumThumbnail({album, setAlbums, user, editOrder}) {
       {
         editOrder
         ?
-        <input className='order-input' type='number' min={0} onChange={handleOrder} value={order}></input>
+        <input className='order-input' type='number' min={1} max={albums.length} onChange={handleOrder} value={order}></input>
         :
         null
       }

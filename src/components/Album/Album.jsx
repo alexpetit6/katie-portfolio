@@ -19,7 +19,7 @@ export default function Album({title, currentRef, setter, setDisabled, closed, p
     getAllAlbums();
   }, [])
 
-  const AlbumThumbnails = albums.map(a => <AlbumThumbnail album={a} key={a._id} setAlbums={setAlbums} user={user} editOrder={editOrder} />)
+  const AlbumThumbnails = albums.map(a => <AlbumThumbnail album={a} key={a._id} albums={albums} setAlbums={setAlbums} user={user} editOrder={editOrder} />)
 
   function handleEditOrder() {
     setEditOrder(!editOrder);
@@ -38,7 +38,13 @@ export default function Album({title, currentRef, setter, setDisabled, closed, p
           closed={closed} 
           page={page} 
         />
+        {
+        user 
+        ?
         <button className='admin-button warning' id='edit-order-btn' onClick={handleEditOrder}>EDIT ORDER</button>
+        : 
+        null
+        }
         <OpenAlbumForm user={user} setAlbums={setAlbums}/>
         <div className="double-line"><Line /><Line /></div>
         <div className="album-thumbnails-container">
