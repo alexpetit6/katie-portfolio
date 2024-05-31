@@ -34,8 +34,9 @@ async function create(req, res) {
     const thumbnailresize = await resize(req.files['thumbnail'][0].buffer);
     req.files['thumbnail'][0].buffer = thumbnailresize;
     const thumbnailURL = await uploadFile(req.files['thumbnail'][0]);
-    const photoURLs = await Promise.all(req.files['photos'].map(async (p) => {
-      return await uploadFile(p);
+    const photoURLs = await Promise.all(req.files['photos'].map(async function(p, i) {
+      const url = await uploadFile(p);
+      return {url: url, order: i};
     }));
     const albumsLength = await Album.find({}).sort('date').exec();
     await Album.create({
