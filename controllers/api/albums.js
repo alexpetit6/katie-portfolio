@@ -68,15 +68,17 @@ async function update(req, res) {
     );
     if (req.files['thumbnail']) {
       const highResThumbnailURL = await uploadFile(req.files['thumbnail'][0])
-      const thumbnailresize = await resize(req.files['thumbnail'][0].buffer);
-      req.files['thumbnail'][0].buffer = thumbnailresize;
+      const thumbnailResize = await resize(req.files['thumbnail'][0].buffer);
+      req.files['thumbnail'][0].buffer = thumbnailResize;
       const thumbnailURL = await uploadFile(req.files['thumbnail'][0]);
       updatedAlbum.thumbnail = thumbnailURL;
       updatedAlbum.photos.splice(0, 1, highResThumbnailURL);
     };
     if (req.files['photos']) {
-      const newPhotoURLs = await Promise.all(req.files['photos'].map(async (p) => {
-        return await uploadFile(p);
+      const photosLength = updatedAlbum.photos.length;
+      const newPhotoURLs = await Promise.all(req.files['photos'].map(async (p, i) => {
+        const url = await uploadFile(p);
+        return {url: url, order: photosLength + i}
       }));
       newPhotoURLs.forEach((p) => updatedAlbum.photos.push(p));
     };
@@ -121,7 +123,13 @@ async function deletePhoto(req, res) {
   try {
     const photoUrl = req.body.url;
     const album = await Album.findById(req.params.id);
-    const photoIdx = album.photos.findIndex((p) => p === photoUrl);
+    const photoIdx = album.photos.findIndex((p) => p.url === photoUrl);
+    const photo = album.photos[photoIdx];
+    for (let i = 0; i < album.photos.length; i++) {
+      if (i <= photo.order) continue;
+      album.photos[i].order = album.photos[i].order - 1;
+      // await album.save();
+    }
     album.photos.splice(photoIdx, 1);
     await album.save();
     res.json(album);

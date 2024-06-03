@@ -42,7 +42,8 @@ export default function AlbumThumbnail({album, albums, setAlbums, user, editOrde
     setHandle(handle + 1);
   }
 
-  const Photos = album.photos.map((p) => <img key={p} src={p} data-fancybox={album._id} loading='lazy'/>);
+  const sortedPhotos = album.photos.sort((a, b) => a.order - b.order)
+  const Photos = sortedPhotos.map((p) => <img key={p} src={p.url} data-fancybox={album._id} loading='lazy'/>);
 
   return (
     hidden
