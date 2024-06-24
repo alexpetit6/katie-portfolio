@@ -12,6 +12,7 @@ export default function EditAlbum({ user }) {
   const [album, setAlbum] = useState();
   const [formData, setFormData] = useState({});
   const [isLoading, setLoading] = useState(false);
+  const [editOrder, setEditOrder] = useState(false);
 
   const { albumId } = useParams();
   
@@ -49,7 +50,7 @@ export default function EditAlbum({ user }) {
     if (thumbnailRef.current.value) newFormData.append('thumbnail', thumbnailRef.current.files[0]);
     if (photosRef.current.value) {
       for (let i = 0; i < photosRef.current.files.length; i++) {
-        newFormData.append('photos', photosRef.current.files[i]);
+        newFormData.append('gallery', photosRef.current.files[i]);
       };
     };
     const updatedAlbum = await update(album._id, newFormData);
@@ -58,10 +59,15 @@ export default function EditAlbum({ user }) {
     photosRef.current.value = null
     setLoading(false);
   }
+
+  function handleEditOrder(evt) {
+    evt.preventDefault();
+    setEditOrder(!editOrder);
+  }
   
   if (album) {
-    const sortedPhotos = album.photos.sort((a, b) => a.order - b.order);
-    const Photos = sortedPhotos.map((p) => <Photo img={p.url} setAlbum={setAlbum} album={album} />);
+    const sortedPhotos = album.gallery.sort((a, b) => a.order - b.order);
+    const Photos = sortedPhotos.map((p, i) => <Photo img={p.url} order={p.order} setAlbum={setAlbum} album={album} editOrder={editOrder} key={i} />);
 
     return (
       <div className='edit-album'>
@@ -72,10 +78,11 @@ export default function EditAlbum({ user }) {
           <input name='title' id='edit-title-input' onChange={handleChange} type="text" value={formData.title} />
           <button type='submit' className='submit-album-update-btn success' disabled={isLoading}>{isLoading ? 'Submitting...' : 'Submit Changes'}</button>
           <div className='edit-subtitles'>
-            <label htmlFor='role-input'>Select Role:</label>
+            <label htmlFor='role-input'>Change Role:</label>
             <input name='role' type="text" id="role-input" className='text-input' placeholder='Role' onChange={handleChange} value={formData.role} />
             <label htmlFor="edit-theater">Change Theater:</label>
             <input name='theater' type="text" id='edit-theater' onChange={handleChange} value={formData.theater} />
+            <button onClick={handleEditOrder} id='photo-order-btn' className='warning'>Change Photo Order</button>
           </div>
           <div className='edit-thumbnail'>
             <div className='edit-thumbnail-img'>

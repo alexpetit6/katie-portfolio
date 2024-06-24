@@ -1,9 +1,27 @@
 import './Photo.css';
+import { useState, useEffect } from 'react';
 import Line from '../Line/Line';
-import { deletePhoto } from '../../utilities/albums-api';
+import { deletePhoto, updatePhotoOrder } from '../../utilities/albums-api';
 import { deletePerfPhoto } from '../../utilities/performance-api';
 
-export default function Photo({ img, album, setAlbum, performance, setPerformance }) {
+export default function Photo({ img, order, album, setAlbum, performance, setPerformance, editOrder }) {
+  const [newOrder, setNewOrder] = useState(order + 1);
+  const [handle, setHandle] = useState(0);
+
+  useEffect(function() {
+    if (handle) {
+      async function changeOrder() {
+        const adjOrder = newOrder - 1;
+        if (newOrder) {
+          const prevOrder = order;
+          const newAlbum = await updatePhotoOrder(album._id, { prevOrder: prevOrder, order: adjOrder });
+          // await updatePhotoOrder(album._id, { prevOrder: prevOrder, order: adjOrder });
+          setAlbum(newAlbum);
+        }
+      }
+      changeOrder();
+    }
+  }, [handle]);
 
   async function handleDelete() {
     if (album) {
@@ -16,10 +34,24 @@ export default function Photo({ img, album, setAlbum, performance, setPerformanc
     };
   }
 
+  function handleOrder(evt) {
+    const value = evt.target.value;
+    if ((value < 1) || value > album.gallery.length) setNewOrder('');
+    else setNewOrder(value);
+    setHandle(handle + 1);
+  }
+
   return (
     <div className='photo-thumbnail'>
       <div className='photo-thumbnail-img'>
         <button onClick={handleDelete} className='delete-photo-btn danger'>DELETE</button>
+        {
+        editOrder
+        ?
+        <input className='order-input' type='number' min={1} max={album.photos.length} onChange={handleOrder} value={newOrder}></input>
+        :
+        null
+        }
         <img src={img} data-fancybox='choreo' alt="" />
       </div>
       <Line />

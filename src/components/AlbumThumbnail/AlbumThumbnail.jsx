@@ -37,13 +37,13 @@ export default function AlbumThumbnail({album, albums, setAlbums, user, editOrde
 
   function handleOrder(evt) {
     const value = evt.target.value;
-    if ((value < 1 && value !== '') || value > albums.length) setOrder('');
+    if (value < 1 || value > albums.length) setOrder('');
     else setOrder(value);
     setHandle(handle + 1);
   }
 
-  const sortedPhotos = album.photos.sort((a, b) => a.order - b.order)
-  const Photos = sortedPhotos.map((p) => <img key={p} src={p.url} data-fancybox={album._id} loading='lazy'/>);
+  const sortedPhotos = album.gallery.sort((a, b) => a.order - b.order)
+  const Photos = sortedPhotos.map((p) => <img key={p._id} src={p.url} data-fancybox={album._id} loading='lazy'/>);
 
   return (
     hidden

@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const photoSchema = new Schema({
+  url: String,
+  order: Number
+})
+
 const albumSchema = new Schema({
   title: {
     type: String,
@@ -14,6 +19,7 @@ const albumSchema = new Schema({
     type: Array,
     default: []
   },
+  gallery: [photoSchema],
   category: {
     type: String,
     required: true

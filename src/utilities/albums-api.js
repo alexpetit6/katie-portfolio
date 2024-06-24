@@ -18,12 +18,15 @@ export async function deletePhoto(id, formData) {
   return sendRequest(`${BASE_URL}/photo/${id}`, 'DELETE', formData);
 }
 
+export async function updatePhotoOrder(id, newData) {
+  return sendRequest(`${BASE_URL}/photo/${id}`, 'PUT', newData);
+}
+
 export async function deleteAlbum(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
 export async function updateOrder(id, newData) {
-  console.log(newData);
   return sendRequest(`${BASE_URL}/order/${id}`, 'PUT', newData);
 }
 

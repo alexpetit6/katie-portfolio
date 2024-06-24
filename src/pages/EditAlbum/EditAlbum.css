@@ -40,6 +40,11 @@
   margin: 5px;
 }
 
+#photo-order-btn {
+  position: relative;
+  top: 120px;
+}
+
 .add-photos {
   /* position: relative;
   left: 40px; */
