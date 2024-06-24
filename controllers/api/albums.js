@@ -73,7 +73,7 @@ async function update(req, res) {
       req.files['thumbnail'][0].buffer = thumbnailResize;
       const thumbnailURL = await uploadFile(req.files['thumbnail'][0]);
       updatedAlbum.thumbnail = thumbnailURL;
-      updatedAlbum.photos.splice(0, 1, highResThumbnailURL);
+      updatedAlbum.gallery.splice(0, 1, {url: highResThumbnailURL, order: 0});
     };
     if (req.files['gallery']) {
       const galleryLength = updatedAlbum.gallery.length;
@@ -141,16 +141,14 @@ async function deletePhoto(req, res) {
 
 async function updatePhotoOrder(req, res) {
   try {
-    const prevOrder = req.body.prevOrder;
-    const order = req.body.order;
+    const prevOrder = Number(req.body.prevOrder);
+    const order = Number(req.body.order);
     const album = await Album.findById(req.params.id);
     const replIdx = album.gallery.findIndex((p) => p.order === order);
     const newIdx = album.gallery.findIndex((p) => p.order === prevOrder);
-    console.log(album.gallery[replIdx].order)
     album.gallery[replIdx].order = prevOrder;
     album.gallery[newIdx].order = order;
     await album.save();
-    console.log(album.gallery[replIdx].order)
     res.json(album);
   } catch (err) {
     console.log(err)

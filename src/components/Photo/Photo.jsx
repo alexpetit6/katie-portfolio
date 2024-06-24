@@ -5,17 +5,16 @@ import { deletePhoto, updatePhotoOrder } from '../../utilities/albums-api';
 import { deletePerfPhoto } from '../../utilities/performance-api';
 
 export default function Photo({ img, order, album, setAlbum, performance, setPerformance, editOrder }) {
-  const [newOrder, setNewOrder] = useState(order + 1);
+  const [newOrder, setNewOrder] = useState(order);
   const [handle, setHandle] = useState(0);
 
   useEffect(function() {
     if (handle) {
       async function changeOrder() {
-        const adjOrder = newOrder - 1;
+        const adjOrder = newOrder;
         if (newOrder) {
           const prevOrder = order;
           const newAlbum = await updatePhotoOrder(album._id, { prevOrder: prevOrder, order: adjOrder });
-          // await updatePhotoOrder(album._id, { prevOrder: prevOrder, order: adjOrder });
           setAlbum(newAlbum);
         }
       }

@@ -67,7 +67,9 @@ export default function EditAlbum({ user }) {
   
   if (album) {
     const sortedPhotos = album.gallery.sort((a, b) => a.order - b.order);
-    const Photos = sortedPhotos.map((p, i) => <Photo img={p.url} order={p.order} setAlbum={setAlbum} album={album} editOrder={editOrder} key={i} />);
+    const Photos = sortedPhotos.map((p, i) => {
+      if (i) return <Photo img={p.url} order={p.order} setAlbum={setAlbum} album={album} editOrder={editOrder} key={i} /> 
+    });
 
     return (
       <div className='edit-album'>
