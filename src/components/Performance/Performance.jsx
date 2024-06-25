@@ -15,7 +15,8 @@ export default function Performance() {
   }, []);
 
   if (performance) {
-    const Photos = performance.photos?.map((p) => <img data-fancybox='performance' key={p} src={p} loading='lazy' />)
+    const sortedPhotos = performance.gallery.sort((a, b) => a.order - b.order);
+    const Photos = sortedPhotos.map((p) => <img data-fancybox='performance' key={p._id} src={p} loading='lazy' />)
   
     return (
       <div id='performance'>

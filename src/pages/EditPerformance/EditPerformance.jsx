@@ -8,6 +8,8 @@ import Photo from '../../components/Photo/Photo';
 export default function EditPerformance() {
   const [performance, setPerformance] = useState();
   const [isLoading, setLoading] = useState(false);
+  const [editOrder, setEditOrder] = useState(false);
+
 
   const photosRef = useRef(null);
 
@@ -33,14 +35,21 @@ export default function EditPerformance() {
     setLoading(false);
   }
 
+  function handleEditOrder(evt) {
+    evt.preventDefault();
+    setEditOrder(!editOrder);
+  }
+
   if (performance) {
-    const Photos = performance.photos.map((p) => <Photo img={p} setPerformance={setPerformance} performance={performance} />);
+    const sortedPhotos = performance.gallery.sort((a, b) => a.order - b.order);
+    const Photos = sortedPhotos.map((p) => <Photo img={p.url} order={p.order} editOrder={editOrder} setPerformance={setPerformance} performance={performance} key={p._id} />);
   
     return (
       <div id="edit-performance">
         <Link to='/'>
           <button className='cancel-edit-album-btn warning'>CANCEL</button>
         </Link>
+        <button onClick={handleEditOrder} id='photo-order-btn' className='warning'>Change Photo Order</button>
         <div id="edit-performance-header">
           <h1>Performance</h1>
           <form onSubmit={handleSubmit} id='performance-form'>

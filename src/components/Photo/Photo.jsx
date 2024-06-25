@@ -2,23 +2,35 @@ import './Photo.css';
 import { useState, useEffect } from 'react';
 import Line from '../Line/Line';
 import { deletePhoto, updatePhotoOrder } from '../../utilities/albums-api';
-import { deletePerfPhoto } from '../../utilities/performance-api';
+import { deletePerfPhoto, updateOrder } from '../../utilities/performance-api';
 
-export default function Photo({ img, order, album, setAlbum, performance, setPerformance, editOrder }) {
+export default function Photo({ img, order, album, setAlbum, performance, setPerformance, editOrder, dataFancybox }) {
   const [newOrder, setNewOrder] = useState(order);
   const [handle, setHandle] = useState(0);
 
   useEffect(function() {
     if (handle) {
-      async function changeOrder() {
-        const adjOrder = newOrder;
-        if (newOrder) {
-          const prevOrder = order;
-          const newAlbum = await updatePhotoOrder(album._id, { prevOrder: prevOrder, order: adjOrder });
-          setAlbum(newAlbum);
+      if (album){
+        async function changeAlbumOrder() {
+          const adjOrder = newOrder;
+          if (newOrder) {
+            const prevOrder = order;
+            const newAlbum = await updatePhotoOrder(album._id, { prevOrder: prevOrder, order: adjOrder });
+            setAlbum(newAlbum);
+          }
         }
+        changeAlbumOrder();
+      } else {
+        async function changePerformanceOrder() {
+          const adjOrder = newOrder;
+          if (newOrder) {
+            const prevOrder = order;
+            const newPerformance = await updateOrder(performance._id, { prevOrder: prevOrder, order: adjOrder });
+            setAlbum(newPerformance);
+          }
+        }
+        changePerformanceOrder();
       }
-      changeOrder();
     }
   }, [handle]);
 

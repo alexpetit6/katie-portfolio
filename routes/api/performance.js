@@ -9,5 +9,6 @@ const imgsUpload = upload.fields([{ name: 'photos', maxCount: 20 }]);
 router.get('/', performanceCtrl.show);
 router.post('/', ensureLoggedIn, imgsUpload, performanceCtrl.addPhotos);
 router.delete('/', ensureLoggedIn, performanceCtrl.deletePhoto);
+router.put('/order/:id', ensureLoggedIn, performanceCtrl.updateOrder);
 
 module.exports = router;

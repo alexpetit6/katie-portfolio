@@ -12,3 +12,7 @@ export async function addPhotos(formData) {
 export async function deletePerfPhoto( formData ) {
   return sendRequest(BASE_URL, 'DELETE', formData);
 }
+
+export async function updateOrder(id, newData) {
+  return sendRequest(`${BASE_URL}/order/${id}`, 'PUT', newData);
+}

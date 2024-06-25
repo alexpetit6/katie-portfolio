@@ -129,7 +129,6 @@ async function deletePhoto(req, res) {
     for (let i = 0; i < album.gallery.length; i++) {
       if (i <= photo.order) continue;
       album.gallery[i].order = album.gallery[i].order - 1;
-      // await album.save();
     }
     album.gallery.splice(photoIdx, 1);
     await album.save();
