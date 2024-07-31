@@ -26,7 +26,7 @@ export default function Photo({ img, order, album, setAlbum, performance, setPer
           if (newOrder) {
             const prevOrder = order;
             const newPerformance = await updateOrder(performance._id, { prevOrder: prevOrder, order: adjOrder });
-            setAlbum(newPerformance);
+            setPerformance(newPerformance);
           }
         }
         changePerformanceOrder();
@@ -47,7 +47,7 @@ export default function Photo({ img, order, album, setAlbum, performance, setPer
 
   function handleOrder(evt) {
     const value = evt.target.value;
-    if ((value < 1) || value > album.gallery.length) setNewOrder('');
+    if ((value < 1) || value > album ? album.gallery.length : performance.gallery.length) setNewOrder('');
     else setNewOrder(value);
     setHandle(handle + 1);
   }
@@ -59,7 +59,7 @@ export default function Photo({ img, order, album, setAlbum, performance, setPer
         {
         editOrder
         ?
-        <input className='order-input' type='number' min={1} max={album.photos.length} onChange={handleOrder} value={newOrder}></input>
+        <input className='order-input' type='number' onChange={handleOrder} value={newOrder}></input>
         :
         null
         }
