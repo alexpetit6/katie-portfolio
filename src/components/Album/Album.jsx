@@ -28,7 +28,6 @@ export default function Album({title, currentRef, setter, setDisabled, closed, p
   return(
     <div id="album-bg">
       {/* If performance gallery gets implemented background img and color will need to be set dynamically */}
-      <img id='album-bg-img' src="/katie-choreo.jpg" alt="" />
       <div className="album">
         <Header 
           title={title} 
